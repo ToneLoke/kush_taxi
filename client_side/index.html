@@ -6,7 +6,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/animate.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -17,7 +19,89 @@
   <script src="app.js"></script>
   <script src="js/angular-materialize.js"></script>
 </head>
-<body>
+<body class="">
+  <!-- top nav bar -->
+  <div class="row">
+    <nav>
+      <div class="nav-wrapper lime darken-4">
+        <a class="brand-logo animated fadeInRight center-align">Kush Taxi</a>
+        <ul class="right hide-on-med-and-down">
+          <li class="links"><a data-activates="slide-out" class="button-collapse show-on-large element-animation" id="car" ><i class="fa fa-taxi "></i></a></li>
+          <li class="links"><a class="waves-effect waves-light ">Join</a></li>
+          <li class="links"><a class="waves-effect waves-light ">Patient Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- Page Layout here -->
+  <div class="container z-depth-5">
+    <form class="">
+      <div class="row">
+        <div class="input-field col s6">
+          <input  id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="file-field input-field">
+        <div class="btn lime darken-4">
+          <span>File</span>
+          <input type="file" multiple>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload one or more files">
+        </div>
+      </div>
+    </div>
+  </form>
 
+</div>
+<div class="row">
+  <ul id="slide-out" class="side-nav">
+    <li><a href="#!">First Sidebar Link</a></li>
+    <li><a href="#!">Second Sidebar Link</a></li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header">Dropdown<i class="mdi-navigation-arrow-drop-down"></i></a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="#!">First</a></li>
+              <li><a href="#!">Second</a></li>
+              <li><a href="#!">Third</a></li>
+              <li><a href="#!">Fourth</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+
+  $(".button-collapse").sideNav();
+  // hide our element on page load
+  // $('#car').css('opacity', 0);
+
+  // $('#car').waypoint(function() {
+  //     $('#car').addClass('lightSpeedIn');
+  // }, { offset: '50%' });
+
+})
+</script>
 </body>
 </html>
