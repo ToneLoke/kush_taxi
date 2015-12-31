@@ -1,0 +1,22 @@
+{
+  "name": "kush_taxi",
+  "version": "1.0.0",
+  "description": "MMJ Delivery Service",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "testing",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "mmj",
+    "cannabis",
+    "weed",
+    "marijuana",
+    "delivery",
+    "ganja"
+  ],
+  "author": "toneloke",
+  "license": "ISC"
+}
