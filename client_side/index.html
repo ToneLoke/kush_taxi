@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
@@ -21,6 +22,7 @@
 </head>
 <body class="container orange lighten-5">
   <!-- End of Scripts -->
+
 
   <!-- top nav bar -->
   <div class="row">
@@ -36,7 +38,6 @@
     </nav>
   </div>
   <!-- End of top nav bar -->
-
 
 
   <!-- Page Layout here -->
@@ -63,10 +64,11 @@
             <label for="password">Password</label>
           </div>
         </div>
+
+
+
         <div class="row">
-
-
-        <div class="file-field input-field col s6">
+          <div class="file-field input-field col s6">
           <div class="btn-floating lime darken-4 left">
             <i class="fa fa-file-image-o"></i>
             <input type="file"/>
@@ -84,8 +86,12 @@
             <input class="file-path validate"  id="rec" type="text" placeholder="Upload Recommendation">
           </div>
         </div>
+        <div class="input-field col s1 offset-s11">
+          <a class="btn waves-effect waves-light lime darken-4">Submit</a>
+        </div>
       </div>
     </form>
+  </div>
   </div>
 </div>
 <!-- End of Page Layout -->
@@ -95,19 +101,66 @@
   <div class="container">
     <form class="">
       <div class="row">
-        <div class="input-field col s6">
-          <input id="email_login" type="email" class="validate">
-          <label for="email_login">Email</label>
+        <div class="input-field col s5">
+          <div class="file-path-wrapper col s6">
+            <i class="fa fa-envelope prefix"></i>
+            <input id="email_login" type="email" class="validate">
+            <label for="email_login">Email</label>
+          </div>
         </div>
-        <div class="input-field col s6">
-          <input id="password_login" type="password" class="validate">
-          <label for="password_login">Password</label>
+        <div class="input-field col s5">
+          <div class="file-path-wrapper col s6">
+            <i class="fa fa-key prefix"></i>
+            <input id="password_login" type="password" class="validate">
+            <label for="password_login">Password</label>
+          </div>
+        </div>
+        <div class="input-field col s1">
+          <a class="btn-floating btn-med waves-effect waves-light lime darken-4 right"><i class="material-icons">input</i></a>
         </div>
       </div>
+    </form>
     </div>
   </div>
 <!-- End Patient Login Form -->
 
+<!-- Template for Products -->
+  <div class="row">
+
+    <div class="col s3 orange lighten-5 z-depth-5">
+      <div class="card small hoverable orange lighten-5">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator scalable" src="Ultra-violet-sativa.jpg"/>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Card Title<a class="btn-floating btn-med waves-effect waves-light lime darken-4 right"><i class="material-icons">info_outline</i></a></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+      </div>
+    </div>
+
+  <div class="col s3 orange lighten-5 z-depth-5">
+    <div class="card small hoverable orange lighten-5">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator scalable" src="Ultra-violet-sativa.jpg"/>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Card Title<a class="btn-floating btn-med waves-effect waves-light lime darken-4 right"><i class="material-icons">info_outline</i></a></span>
+        <p><a href="#">This is a link</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End Template for Products -->
 
 <!-- Pop Out Side Menu -->
 <div class="row">
@@ -120,6 +173,10 @@
   </ul>
 </div>
 <!-- End of Pop Out Side Menu  -->
+
+<!-- n k<a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="500" data-closeonclick="false">
+Show side-nav
+</a> -->
 
 
 
@@ -138,10 +195,3 @@ $(document).ready(function(){
 </script>
 </body>
 </html>
-
-
-
-
-<!-- n k<a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="500" data-closeonclick="false">
-Show side-nav
-</a> -->
