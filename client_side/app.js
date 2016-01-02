@@ -1,3 +1,4 @@
 (function() {
-  angular.module('kushTaxi', [])  
+  angular.module('kushTaxi', ['kushFactory', 'controllers', 'appRoutes'])
+
 }());

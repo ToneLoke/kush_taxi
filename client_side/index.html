@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="kushTaxi">
 <head>
   <meta charset="utf-8">
   <title>Kush Taxi</title>
@@ -18,9 +18,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-animate.js"></script>
   <script src="app.js"></script>
+  <script src="app.routes.js"></script>
+  <script src="js/factory.js"></script>
+  <script src="js/controllers.js"></script>
   <script src="js/angular-materialize.js"></script>
 </head>
-<body class="container orange lighten-5">
+<body ng-controller="signUp as su" class="container orange lighten-5">
+
+  {{ 5 + 5 }}
+
   <!-- End of Scripts -->
 
 
@@ -33,6 +39,7 @@
           <li class="links"><span class="left">Menu</span><a data-activates="slide-out" class="button-collapse show-on-large element-animation" id="car" ><i class="fa fa-taxi "></i></a></li>
           <li class="links"><a class="waves-effect waves-light ">Join</a></li>
           <li class="links"><a class="waves-effect waves-light ">Patient Login</a></li>
+          <li class="links"><a class="waves-effect waves-light " id="cart"><i class="fa fa-cart-plus "></i></a></li>
         </ul>
       </div>
     </nav>
@@ -43,24 +50,24 @@
   <!-- Page Layout here -->
   <div class="row orange lighten-5 z-depth-5">
     <div class="container">
-      <form class="">
+      <form ng-submit="su.submit()">
         <div class="row">
           <div class="input-field col s6">
-            <input  id="first_name" type="text" class="validate">
+            <input ng-model="su.patient.fname" id="first_name" type="text" class="validate">
             <label for="first_name">First Name</label>
           </div>
           <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
+            <input ng-model="su.patient.lname" id="last_name" type="text" class="validate">
             <label for="last_name">Last Name</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input id="email" type="email" class="validate">
+            <input ng-model="su.patient.email" id="email" type="email" class="validate">
             <label for="email">Email</label>
           </div>
           <div class="input-field col s6">
-            <input id="password" type="password" class="validate">
+            <input ng-model="su.patient.password" id="password" type="password" class="validate">
             <label for="password">Password</label>
           </div>
         </div>
@@ -69,10 +76,10 @@
 
         <div class="row">
           <div class="file-field input-field col s6">
-          <div class="btn-floating lime darken-4 left">
-            <i class="fa fa-file-image-o"></i>
-            <input type="file"/>
-          </div>
+            <div class="btn-floating lime darken-4 left">
+              <i class="fa fa-file-image-o"></i>
+              <input ng-model="su.patient.idImg" type="file"/>
+            </div>
           <div class="file-path-wrapper col s6">
             <input class="file-path validate"  id="photo" type="text" placeholder="Upload Photo ID">
           </div>
@@ -83,17 +90,16 @@
             <input type="file"/>
           </div>
           <div class="file-path-wrapper col s6">
-            <input class="file-path validate"  id="rec" type="text" placeholder="Upload Recommendation">
+            <input ng-model="su.patient.recImg" class="file-path validate"  id="rec" type="text" placeholder="Upload Recommendation">
           </div>
         </div>
         <div class="input-field col s1 offset-s11">
-          <a class="btn waves-effect waves-light lime darken-4">Submit</a>
+          <button type="submit" class="btn waves-effect waves-light lime darken-4">Submit</button>
         </div>
       </div>
     </form>
   </div>
   </div>
-</div>
 <!-- End of Page Layout -->
 
 <!-- Patient Login Form -->
@@ -124,6 +130,9 @@
   </div>
 <!-- End Patient Login Form -->
 
+
+
+
 <!-- Template for Products -->
   <div class="row">
 
@@ -133,12 +142,15 @@
           <img class="activator scalable" src="Ultra-violet-sativa.jpg"/>
         </div>
         <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Card Title<a class="btn-floating btn-med waves-effect waves-light lime darken-4 right"><i class="material-icons">info_outline</i></a></span>
-          <p><a href="#">This is a link</a></p>
+          <span class="card-title activator grey-text text-darken-4">Ultra Violet<a class="btn-floating btn-med waves-effect waves-light lime darken-4 right"><i class="material-icons">shopping_cart</i></a></span>
+          <p><a href="#">Learn more about this strain</a></p>
         </div>
         <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          <span class="card-title grey-text text-darken-4">Ultra Violet Prices<i class="material-icons right">close</i></span>
+            <p>1/8: $60<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
+            <p>1/4: $100<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
+            <p>1/2: $180<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
+            <p>Oz: $320<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
         </div>
       </div>
     </div>
@@ -146,21 +158,25 @@
   <div class="col s3 orange lighten-5 z-depth-5">
     <div class="card small hoverable orange lighten-5">
       <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator scalable" src="Ultra-violet-sativa.jpg"/>
+        <img class="activator scalable" src="green-krack-sativa.jpg"/>
       </div>
       <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">Card Title<a class="btn-floating btn-med waves-effect waves-light lime darken-4 right"><i class="material-icons">info_outline</i></a></span>
-        <p><a href="#">This is a link</a></p>
+        <span class="card-title activator grey-text text-darken-4">Green Krack<a class="btn-floating btn-med waves-effect waves-light lime darken-4 right"><i class="material-icons">shopping_cart</i></a></span>
+        <p><a href="#">Learn more about this strain</a></p>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        <span class="card-title grey-text text-darken-4">Green Krack Prices<i class="material-icons right">close</i></span>
+        <p>1/8: $60<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
+        <p>1/4: $100<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
+        <p>1/2: $180<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
+        <p>Oz: $320<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
       </div>
     </div>
   </div>
 </div>
-
 <!-- End Template for Products -->
+
+
 
 <!-- Pop Out Side Menu -->
 <div class="row">
@@ -173,6 +189,54 @@
   </ul>
 </div>
 <!-- End of Pop Out Side Menu  -->
+
+
+<!-- Past Orders Table -->
+<div class="row" ng-controller="patients as ps">
+    <ul class="collapsible" data-collapsible="accordion" watch>
+        <li ng-repeat="order in ps.orders">
+            <div class="collapsible-header">ID: {{ order.id }} -- Total:{{order.total }} -- Date: {{order.date }}</div>
+            <div class="collapsible-body"><ul><li ng-repeat="item in order.items"><span> Name: {{ item.name }} </span> --- <span> Qty: {{ item. qty }}</span> --- Price: {{ item.price }} </li></ul></div>
+        </li>
+    </ul>
+</div>
+<!-- End of Past Orders Table -->
+
+
+<div class="row orange lighten-5 z-depth-5">
+      <table class="bordered responsive-table highlighted">
+        <thead>
+          <tr>
+              <th data-field="id">OrderId</th>
+              <th data-field="date">Order Date</th>
+              <th data-field="name">Quantity</th>
+              <th data-field="price">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Guerrilla OG</td>
+            <td>10/22/2015</td>
+            <td>Eighth</td>
+            <td>$60</td>
+          </tr>
+          <tr>
+            <td>Herojuana</td>
+            <td>10/25/2015</td>
+            <td>Quad</td>
+            <td>$100</td>
+          </tr>
+          <tr class="grey lighten-2">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>$160</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+
 
 <!-- n k<a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="500" data-closeonclick="false">
 Show side-nav
@@ -194,4 +258,27 @@ $(document).ready(function(){
 })
 </script>
 </body>
+
+<!-- Footer  -->
+<div class="orange lighten-5 z-depth-5">
+  <footer class="page-footer lime-darken-4">
+          <div class="container">
+            <div class="row">
+              <div class="col s6 offset-s6">
+                <h5 class="white-text">Hours & Info</h5>
+                <p class="grey-text text-lighten-4">Serving Venice, Santa Monica, Marina Del Rey<br>Sun-Thurs: 2pm-Midnight, Fri-Sat: 2pm-1am<br>310.625.4424<br>gethigh@kushtaxi.com
+                </p>
+              </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2016 ET Productions
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </div>
+        </footer>
+        </div>
+<!-- End of Footer -->
+
 </html>
