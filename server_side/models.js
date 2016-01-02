@@ -7,7 +7,7 @@ var itemSchema = new Schema({
   img: { data: Buffer, contentType: String },
   type: String,
   thc: Number,
-  pricing: { gram: Number, eigth: Number, quad: Number, half: Number },
+  pricing: { gram: Number, eighth: Number, quad: Number, half: Number },
   treats: [String]
 })
 var orderSchema = new Schema({
