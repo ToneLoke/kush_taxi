@@ -8,14 +8,17 @@ var
 	cors = require('cors')
 
 
+
 mongoose.connect('mongodb://localhost/kushtaxi', function( err ){
 	if(err) console.log( err )
 	console.log( 'Connected to MongoDB' )
 })
 
-app.use( cors())
+app.use( bodyParser.urlencoded({
+	extended: true
+}))
 app.use( bodyParser.json() )
-app.use( bodyParser({uploadDir: './uploads'}) )
+app.use( cors())
 app.use( logger('dev') )
 
 app.use( '/api', apiRoutes )

@@ -80,7 +80,7 @@
           <div class="file-field input-field col s6">
             <div class="btn-floating lime darken-4 left">
               <i class="fa fa-file-image-o"></i>
-              <input ng-model="su.patient.idImg" type="file"/>
+              <input type="file" file-model="su.patient.idImg"/>
             </div>
           <div class="file-path-wrapper col s6">
             <input class="file-path validate"  id="photo" type="text" placeholder="Upload Photo ID">
@@ -89,10 +89,10 @@
         <div class="file-field input-field col s6">
           <div class="btn-floating lime darken-4 left">
             <i class="fa fa-file-o"></i>
-            <input type="file"/>
+            <input type="file" file-model="su.patient.recImg"/>
           </div>
           <div class="file-path-wrapper col s6">
-            <input ng-model="su.patient.recImg" class="file-path validate"  id="rec" type="text" placeholder="Upload Recommendation">
+            <input class="file-path validate"  id="rec" type="text" placeholder="Upload Recommendation">
           </div>
         </div>
         <div class="input-field col s1 offset-s11">

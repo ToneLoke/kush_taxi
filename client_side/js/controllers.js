@@ -2,6 +2,7 @@
   angular.module( 'controllers', [] )
   .controller( 'signUp', signUp )
   .controller( 'patients', patients )
+  signUp.$inject = [ '$http', 'fileUpload']
   function patients(){
     var patient = this
     patient.orders = [
@@ -15,14 +16,16 @@
         { name: "space queen", price: 110, qty: 2 } ] }
     ]
 }
-  function signUp($http){
+  function signUp($http,fileUpload){
     var signUp = this
     signUp.submit = function(){
       console.log("======== adding new patient ============")
-      $http.post('http://10.200.8.177:3000/api/patients', signUp.patient)
-        .then( function(res){
-            console.log(res)
-        })
+      // $http.post('http://10.200.8.177:3000/api/patients', signUp.patient)
+      //   .then( function(res){
+      //       console.log(res)
+      //   })
+      console.log(signUp.patient.idImg)
+      fileUpload.uploadFileToUrl(signUp.patient.idImg, 'http://localhost:3000/api/patients')
     }
   }
-}());
+}())
