@@ -71,7 +71,7 @@ header, main, footer {
   }
   60% {
     opacity:1;
-    transform:  translate(-40px,0px)  skewX(30deg) ;
+    transform:  translate(-900px,0px)  skewX(30deg) ;
   }
   80% {
     opacity:1;
@@ -109,7 +109,7 @@ header, main, footer {
   }
   60% {
     opacity:1;
-    -webkit-transform:  translate(-40px,0px)  skewX(30deg) ;
+    -webkit-transform:  translate(-900px,0px)  skewX(30deg) ;
   }
   80% {
     opacity:1;
