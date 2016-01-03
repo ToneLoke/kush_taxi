@@ -1,0 +1,178 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'cors' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose cache add [ 'cors', null ]
+5 verbose cache add name=undefined spec="cors" args=["cors",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'cors',
+6 verbose parsed url   path: 'cors',
+6 verbose parsed url   href: 'cors' }
+7 silly lockFile 3b1b74c9-cors cors
+8 verbose lock cors /Users/David/.npm/3b1b74c9-cors.lock
+9 silly lockFile 3b1b74c9-cors cors
+10 silly lockFile 3b1b74c9-cors cors
+11 verbose addNamed [ 'cors', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 9fcb5857-cors cors@
+14 verbose lock cors@ /Users/David/.npm/9fcb5857-cors.lock
+15 silly addNameRange { name: 'cors', range: '*', hasData: false }
+16 verbose request where is /cors
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id 2952e0d7e356b7e9
+19 verbose url raw /cors
+20 verbose url resolving [ 'https://registry.npmjs.org/', './cors' ]
+21 verbose url resolved https://registry.npmjs.org/cors
+22 verbose request where is https://registry.npmjs.org/cors
+23 info trying registry request attempt 1 at 17:25:27
+24 http GET https://registry.npmjs.org/cors
+25 http 200 https://registry.npmjs.org/cors
+26 silly registry.get cb [ 200,
+26 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     etag: '"EY99DATIRGGJGHKH0UV5VYXQE"',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=300',
+26 silly registry.get     'content-length': '46560',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     date: 'Sun, 03 Jan 2016 01:25:27 GMT',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '0',
+26 silly registry.get     connection: 'keep-alive',
+26 silly registry.get     'x-served-by': 'cache-lax1430-LAX',
+26 silly registry.get     'x-cache': 'HIT',
+26 silly registry.get     'x-cache-hits': '1',
+26 silly registry.get     'x-timer': 'S1451784327.561137,VS0,VE201',
+26 silly registry.get     vary: 'Accept' } ]
+27 silly addNameRange number 2 { name: 'cors', range: '*', hasData: true }
+28 silly addNameRange versions [ 'cors',
+28 silly addNameRange   [ '0.0.1',
+28 silly addNameRange     '0.0.2',
+28 silly addNameRange     '0.0.3',
+28 silly addNameRange     '0.0.4',
+28 silly addNameRange     '0.0.5',
+28 silly addNameRange     '0.1.0',
+28 silly addNameRange     '0.1.1',
+28 silly addNameRange     '1.0.0',
+28 silly addNameRange     '1.0.1',
+28 silly addNameRange     '2.0.0',
+28 silly addNameRange     '2.1.0',
+28 silly addNameRange     '2.1.1',
+28 silly addNameRange     '2.2.0',
+28 silly addNameRange     '2.3.0',
+28 silly addNameRange     '2.3.1',
+28 silly addNameRange     '2.3.2',
+28 silly addNameRange     '2.4.0',
+28 silly addNameRange     '2.4.1',
+28 silly addNameRange     '2.4.2',
+28 silly addNameRange     '2.5.0',
+28 silly addNameRange     '2.5.1',
+28 silly addNameRange     '2.5.2',
+28 silly addNameRange     '2.5.3',
+28 silly addNameRange     '2.6.0',
+28 silly addNameRange     '2.6.1',
+28 silly addNameRange     '2.7.0',
+28 silly addNameRange     '2.7.1' ] ]
+29 verbose addNamed [ 'cors', '2.7.1' ]
+30 verbose addNamed [ '2.7.1', '2.7.1' ]
+31 silly lockFile 221e52c6-cors-2-7-1 cors@2.7.1
+32 verbose lock cors@2.7.1 /Users/David/.npm/221e52c6-cors-2-7-1.lock
+33 silly lockFile 2618af42-ry-npmjs-org-cors-cors-2-7-1-tgz https://registry.npmjs.org/cors/-/cors-2.7.1.tgz
+34 verbose lock https://registry.npmjs.org/cors/-/cors-2.7.1.tgz /Users/David/.npm/2618af42-ry-npmjs-org-cors-cors-2-7-1-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/cors/-/cors-2.7.1.tgz',
+35 verbose addRemoteTarball   '3c2e50a58af9ef8c89bee21226b099be1f02739b' ]
+36 info retry fetch attempt 1 at 17:25:27
+37 verbose fetch to= /var/folders/wt/2rdhqkd54jz65cx5bnl_90zr0000gp/T/npm-20236-uH8nv3G7/registry.npmjs.org/cors/-/cors-2.7.1.tgz
+38 http GET https://registry.npmjs.org/cors/-/cors-2.7.1.tgz
+39 http 200 https://registry.npmjs.org/cors/-/cors-2.7.1.tgz
+40 silly lockFile 2618af42-ry-npmjs-org-cors-cors-2-7-1-tgz https://registry.npmjs.org/cors/-/cors-2.7.1.tgz
+41 silly lockFile 2618af42-ry-npmjs-org-cors-cors-2-7-1-tgz https://registry.npmjs.org/cors/-/cors-2.7.1.tgz
+42 silly lockFile 221e52c6-cors-2-7-1 cors@2.7.1
+43 silly lockFile 221e52c6-cors-2-7-1 cors@2.7.1
+44 silly lockFile 9fcb5857-cors cors@
+45 silly lockFile 9fcb5857-cors cors@
+46 silly resolved [ { name: 'cors',
+46 silly resolved     version: '2.7.1',
+46 silly resolved     author:
+46 silly resolved      { name: 'Troy Goode',
+46 silly resolved        email: 'troygoode@gmail.com',
+46 silly resolved        url: 'https://github.com/troygoode/' },
+46 silly resolved     description: 'middleware for dynamically or statically enabling CORS in express/connect applications',
+46 silly resolved     keywords: [ 'cors', 'express', 'connect', 'middleware' ],
+46 silly resolved     homepage: 'https://github.com/expressjs/cors/',
+46 silly resolved     repository: { type: 'git', url: 'git://github.com/expressjs/cors.git' },
+46 silly resolved     contributors: [ [Object] ],
+46 silly resolved     license: 'MIT',
+46 silly resolved     bugs: { url: 'https://github.com/expressjs/cors/issues' },
+46 silly resolved     main: './lib/index.js',
+46 silly resolved     engines: { node: '>=0.10.0' },
+46 silly resolved     dependencies: { vary: '^1' },
+46 silly resolved     devDependencies:
+46 silly resolved      { 'basic-auth-connect': '^1.0.0',
+46 silly resolved        'body-parser': '^1.12.4',
+46 silly resolved        eslint: '^0.21.2',
+46 silly resolved        express: '^4.12.4',
+46 silly resolved        mocha: '^2.2.5',
+46 silly resolved        should: '^6.0.3',
+46 silly resolved        supertest: '^1.0.1' },
+46 silly resolved     scripts:
+46 silly resolved      { test: 'npm run lint && ./node_modules/mocha/bin/mocha',
+46 silly resolved        lint: './node_modules/eslint/bin/eslint.js lib test' },
+46 silly resolved     gitHead: 'bef1a97c22a3f15cb23ab2d9cf8e7e3f7134e107',
+46 silly resolved     _id: 'cors@2.7.1',
+46 silly resolved     _shasum: '3c2e50a58af9ef8c89bee21226b099be1f02739b',
+46 silly resolved     _from: 'cors@',
+46 silly resolved     _npmVersion: '2.5.1',
+46 silly resolved     _nodeVersion: '0.12.0',
+46 silly resolved     _npmUser: { name: 'troygoode', email: 'troygoode@gmail.com' },
+46 silly resolved     maintainers: [ [Object], [Object] ],
+46 silly resolved     dist:
+46 silly resolved      { shasum: '3c2e50a58af9ef8c89bee21226b099be1f02739b',
+46 silly resolved        tarball: 'http://registry.npmjs.org/cors/-/cors-2.7.1.tgz' },
+46 silly resolved     directories: {},
+46 silly resolved     _resolved: 'https://registry.npmjs.org/cors/-/cors-2.7.1.tgz' } ]
+47 info install cors@2.7.1 into /usr/local/lib
+48 info installOne cors@2.7.1
+49 verbose lib/node_modules/cors unbuild
+50 verbose tar unpack /Users/David/.npm/cors/2.7.1/package.tgz
+51 silly lockFile 19afbf33--usr-local-lib-node-modules-cors tar:///usr/local/lib/node_modules/cors
+52 verbose lock tar:///usr/local/lib/node_modules/cors /Users/David/.npm/19afbf33--usr-local-lib-node-modules-cors.lock
+53 silly lockFile 85d831b9-David-npm-cors-2-7-1-package-tgz tar:///Users/David/.npm/cors/2.7.1/package.tgz
+54 verbose lock tar:///Users/David/.npm/cors/2.7.1/package.tgz /Users/David/.npm/85d831b9-David-npm-cors-2-7-1-package-tgz.lock
+55 silly gunzTarPerm modes [ '755', '644' ]
+56 error Error: EACCES, mkdir '/usr/local/lib/node_modules/cors'
+56 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/cors']
+56 error   errno: 3,
+56 error   code: 'EACCES',
+56 error   path: '/usr/local/lib/node_modules/cors',
+56 error   fstream_type: 'Directory',
+56 error   fstream_path: '/usr/local/lib/node_modules/cors',
+56 error   fstream_class: 'DirWriter',
+56 error   fstream_stack:
+56 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+56 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+56 error      'Object.oncomplete (fs.js:107:15)' ] }
+57 error Please try running this command again as root/Administrator.
+58 error System Darwin 14.5.0
+59 error command "node" "/usr/local/bin/npm" "install" "-g" "cors"
+60 error cwd /Users/David/Desktop/WORKSPACE/kush_taxi/server_side
+61 error node -v v0.10.33
+62 error npm -v 1.4.28
+63 error path /usr/local/lib/node_modules/cors
+64 error fstream_path /usr/local/lib/node_modules/cors
+65 error fstream_type Directory
+66 error fstream_class DirWriter
+67 error code EACCES
+68 error errno 3
+69 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/cors'
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+70 error fstream_stack Object.oncomplete (fs.js:107:15)
+71 verbose exit [ 3, true ]
