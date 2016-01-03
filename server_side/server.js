@@ -14,12 +14,12 @@ mongoose.connect('mongodb://localhost/kushtaxi', function( err ){
 	console.log( 'Connected to MongoDB' )
 })
 
+app.use( logger('dev') )
 app.use( bodyParser.urlencoded({
 	extended: true
 }))
 app.use( bodyParser.json() )
 app.use( cors())
-app.use( logger('dev') )
 
 app.use( '/api', apiRoutes )
 

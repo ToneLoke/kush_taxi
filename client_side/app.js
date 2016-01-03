@@ -14,11 +14,14 @@
         }
       }
     }])
+    // upload form with pics service and agreement
     .service('fileUpload', ['$http', function($http) {
-      this.uploadFileToUrl = function(file, uploadUrl) {
-        console.log('loading file');
-        var fd = new FormData();
-        fd.append('file', file);
+      this.uploadFileToUrl = function(file, data, uploadUrl) {
+        console.log('loading file')
+        var fd = new FormData()
+        fd.append('patient', angular.toJson(data))
+        fd.append('files', file[0])
+        fd.append('files', file[1])
         $http.post(uploadUrl, fd, {
             transformRequest: angular.identity,
             headers: {
@@ -26,7 +29,7 @@
             }
           })
           .success(function() {})
-          .error(function() {});
+          .error(function() {})
       }
-    }]);
+    }])
 }())

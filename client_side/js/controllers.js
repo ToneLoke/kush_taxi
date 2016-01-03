@@ -18,14 +18,17 @@
 }
   function signUp($http,fileUpload){
     var signUp = this
+    signUp.pics = []
     signUp.submit = function(){
       console.log("======== adding new patient ============")
       // $http.post('http://10.200.8.177:3000/api/patients', signUp.patient)
       //   .then( function(res){
       //       console.log(res)
       //   })
-      console.log(signUp.patient.idImg)
-      fileUpload.uploadFileToUrl(signUp.patient.idImg, 'http://localhost:3000/api/patients')
+      signUp.pics.push(signUp.patient.recImg)
+      signUp.pics.push(signUp.patient.idImg)
+      console.log("=====patient===",signUp.patient)
+      fileUpload.uploadFileToUrl(signUp.pics, signUp.patient, 'http://localhost:3000/api/patients')
     }
   }
 }())
