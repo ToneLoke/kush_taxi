@@ -1,0 +1,47 @@
+<!-- Contact Form -->
+<div class="row orange lighten-5 z-depth-5">
+  <div class="container">
+
+    <h5>Contact Us</h5>
+        <h7><b><u>Kush Taxi</u></b></h7>
+            <p class="grey-text text-darken-4">
+              <i>Serving Venice, Santa Monica, Marina Del Rey</i><br>
+              <b>Hours:</b> Sun-Thurs: 2pm-Midnight, Fri-Sat: 2pm-1am<br>
+              <b>Phone:</b> 310.625.4424<br>
+              <b>Email:</b> gethigh@kushtaxi.com
+            </p>
+
+    <h7><b><u>Contact Form</u></b></h7>
+        <form ng-submit="co.submit()">
+        <div class="input-field">
+          <input ng-model="su.patient.name" id="name" type="text" class="validate">
+          <label for="name">Name</label>
+        </div>
+        <div class="input-field">
+          <input ng-model="su.patient.cell" id="cell" type="text" class="validate">
+          <label for="cell">Cell Phone</label>
+        </div>
+        <div class="input-field">
+          <input ng-model="su.patient.emaila" id="email_a" type="email" class="validate">
+          <label for="email_a">Email Address</label>
+        </div>
+        <div class="input-field">
+          <input ng-model="su.patient.subject" id="subject" type="text" class="validate">
+          <label for="subject">Subject</label>
+        </div>
+        <div class="input-field">
+          <input ng-model="su.patient.message" id="message" type="text" class="validate">
+          <label for="message">Message</label>
+        </div>
+
+    <!-- Submit Button -->
+      <div class="input-field col s1 offset-s11">
+        <button type="submit" class="btn waves-effect waves-light lime darken-4">Submit</button>
+      </div>
+    </form>
+
+
+
+</div>
+</div>
+<!-- End of Contact Form -->

@@ -1,27 +1,29 @@
 <!-- Patient Login Form -->
 <div class="row orange lighten-5 z-depth-5">
   <div class="container">
-    <form class="">
+    <form ng-submit="ln.submit()">
       <div class="row">
-        <div class="input-field col s5">
+        <div class="input-field">
           <div class="file-path-wrapper col s6">
             <i class="fa fa-envelope prefix"></i>
             <input id="email_login" type="email" class="validate">
             <label for="email_login">Email</label>
           </div>
         </div>
-        <div class="input-field col s5">
-          <div class="file-path-wrapper col s6">
-            <i class="fa fa-key prefix"></i>
-            <input id="password_login" type="password" class="validate">
-            <label for="password_login">Password</label>
-          </div>
-        </div>
-        <div class="input-field col s1">
-          <a class="btn-floating btn-med waves-effect waves-light lime darken-4 right"><i class="material-icons">input</i></a>
-        </div>
       </div>
-    </form>
+        <div class="row">
+            <div class="input-field">
+              <div class="file-path-wrapper col s6">
+                <i class="fa fa-key prefix"></i>
+                <input id="password_login" type="password" class="validate">
+                <label for="password_login">Password</label>
+              </div>
+              <div class="input-field col 8 offset-s1">
+                <button type="submit" class="btn-floating btn-med waves-effect waves-light lime darken-4 right"><i class="material-icons">input</i></button>
+              </div>
+            </div>
+        </div>
+      </form>
     </div>
   </div>
 <!-- End Patient Login Form -->

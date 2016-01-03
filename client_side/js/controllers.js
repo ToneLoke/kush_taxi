@@ -4,7 +4,7 @@
   .controller( 'signUp', signUp )
   .controller( 'logIn', logIn )
   .controller( 'cart', cart )
-  .controller( 'menu', menu)
+  .controller( 'products', products )
   function patients(){
     var patient = this
     patient.orders = [

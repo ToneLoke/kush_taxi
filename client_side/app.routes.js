@@ -17,7 +17,7 @@
         .state('logIn', {
         url: '/login',
         templateUrl: 'partials/logIn.html',
-        controllerAs: "logIn as li"
+        controllerAs: "logIn as ln"
       })
 
       // CART STATES ==========================
@@ -31,7 +31,7 @@
         .state('products', {
         url: '/products',
         templateUrl: '/partials/products.html',
-        controllerAs: 'products as ps'
+        controllerAs: 'products as pr'
       })
 
       // ORDERS STATES ======================
