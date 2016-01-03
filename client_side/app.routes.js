@@ -41,12 +41,22 @@
         controllerAs: 'orders as os'
       })
 
-      // MENU STATES ======================
-        .state('menu', {
-        url: '/menu',
-        templateUrl: '/partials/menu.html',
-        controllerAs: 'menu as mu'
+      // CONTACT STATES ======================
+
+        .state('contact', {
+        url: '/contact',
+        templateUrl: '/partials/contact.html',
+        controllerAs: 'contact as co'
       })
+
+      // LOCATIONS STATES ======================
+
+        .state('locations', {
+        url: '/locations',
+        templateUrl: '/partials/locations.html',
+        controllerAs: 'locations as lc'
+      })
+
 
     });
 }());
