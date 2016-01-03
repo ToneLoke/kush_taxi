@@ -1,10 +1,10 @@
 (function() {
   angular.module('controllers', [])
     .controller('patients', patients)
-  signUp.$inject = ['$http', 'fileUpload']
     .controller('signUp', signUp)
     .controller('logIn', logIn)
 
+  signUp.$inject = ['$http', 'fileUpload']
 
   function patients() {
     var patient = this

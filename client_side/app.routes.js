@@ -30,7 +30,7 @@
       // PRODUCT STATES =======================
         .state('products', {
         url: '/products',
-        templateUrl: '/partials/products.html',
+        templateUrl: '/partials/products_template.html',
         // controllerAs: 'products as pr'
       })
 
@@ -38,7 +38,7 @@
         .state('orders', {
         url: '/orders',
         templateUrl: '/partials/orders.html',
-        // controllerAs: 'orders as os'
+        controllerAs: 'patients as ps'
       })
 
       // CONTACT STATES ======================
