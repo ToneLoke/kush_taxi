@@ -41,7 +41,12 @@
         controllerAs: 'orders as os'
       })
 
-
+      // MENU STATES ======================
+        .state('menu', {
+        url: '/menu',
+        templateUrl: '/partials/menu.html',
+        controllerAs: 'menu as mu'
+      })
 
     });
 }());
