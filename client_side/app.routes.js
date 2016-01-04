@@ -23,14 +23,14 @@
       // CART STATES ==========================
         .state('cart', {
         url: '/cart',
-        templateUrl: '/partials/cart.html',
+        templateUrl: '/partials/cart.html'
         // controllerAs: 'cart as ct'
       })
 
       // PRODUCT STATES =======================
         .state('products', {
         url: '/products',
-        templateUrl: '/partials/products_template.html',
+        templateUrl: '/partials/products.html'
         // controllerAs: 'products as pr'
       })
 
@@ -45,7 +45,7 @@
 
         .state('contact', {
         url: '/contact',
-        templateUrl: '/partials/contact.html',
+        templateUrl: '/partials/contact.html'
         // controllerAs: 'contact as co'
       })
 
@@ -53,7 +53,7 @@
 
         .state('locations', {
         url: '/locations',
-        templateUrl: '/partials/locations.html',
+        templateUrl: '/partials/locations.html'
         // controllerAs: 'locations as lc'
       })
 
