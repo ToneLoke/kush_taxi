@@ -63,7 +63,7 @@
 
   function logIn($http) {
     var logIn = this
-    logIn.input = function() {
+    logIn.submit = function() {
       console.log("===== log in successful ========")
       $http.get('http://10.200.8.177:3000/api/patients', logIn.patient)
         .then(function(res) {
