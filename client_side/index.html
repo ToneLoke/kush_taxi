@@ -1,16 +1,97 @@
 <!DOCTYPE html>
 <html ng-app="kushTaxi">
+
 <head>
   <meta charset="utf-8">
   <title>Kush Taxi</title>
+  <!-- CSS STYLE SHEETS AND FONTS -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/animate.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/animate.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!--------------------------------->
+</head>
 
+<body ng-controller="signUp as su" class="orange lighten-5">
+  <!--------------------------------->
+  <!-- top nav bar -->
+  <header class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper lime darken-4">
+        <a class="brand-logo animated fadeInRight center-align">Kush Taxi</a>
+        <ul class="right hide-on-med-and-down">
+          <li class="links">
+            <span class="left">Menu</span><a data-activates="slide-out" class="button-collapse show-on-large element-animation" id="car"><i class="fa fa-taxi "></i></a></li>
+          <li class="links"><a href="#/signup" class="waves-effect waves-light ">Join</a></li>
+          <li class="links"><a href="#/login" class="waves-effect waves-light ">Patient Login</a></li>
+          <li class="links"><a href="#/cart" class="waves-effect waves-light " id="cart"><i class="fa fa-cart-plus "></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- End of top nav bar -->
+  <!--------------------------------->
+  <main>
+    <!-- parallax container -->
+    <div class="parallax-container">
+      <div class="parallax" parallax>
+        <img id="pImg" ng-src="grow_room.jpg">
+      </div>
+    </div>
+    <!-- end parallax -->
+    <!--------------------------------->
+    <!-- Pop Out Side Menu -->
+    <div class="row orange lighten-5 z-depth-5">
+      <div class="container brown-text text darken-2">
+        <ul id="slide-out" class="side-nav">
+          <li><a href="#/products">Products</a></li>
+          <li><a href="#/locations">Service Area</a></li>
+          <li><a href="#/orders">Order History</a></li>
+          <li><a href="#/contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End of Pop Out Side Menu  -->
+    <!--------------------------------->
 
+    <!-- UI router state change -->
+    <div ui-view></div>
+    <!-- End UI router state change -->
+    <!-- parallax container -->
+    <div class="parallax-container">
+      <div class="parallax" parallax>
+        <img  ng-src="grow_room.jpg">
+      </div>
+    </div>
+    <!-- end parallax -->
+  </main>
+  <!--------------------------------->
+  <!-- Footer  -->
+  <footer class="page-footer lime darken-4 z-depth-5">
+    <div class="container">
+      <div class="row ">
+        <div class="col s6 offset-s6">
+          <h5 class="white-text">Hours & Info</h5>
+          <p class="grey-text text-lighten-4">
+            Serving Venice, Santa Monica, Marina Del Rey
+            <br> Sun-Thurs: 2pm-Midnight, Fri-Sat: 2pm-1am
+            <br> 310.625.4424
+            <br> gethigh@kushtaxi.com
+          </p>
+        </div>
+      </div>
+      <div class="footer-copyright lime darken-4">
+        <div class="container">
+          © 2016 E.T. Productions
+          <a class="grey-text text-lighten-4 right" href="#/contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End of Footer -->
+  <!--------------------------------->
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
@@ -23,80 +104,15 @@
   <script src="js/factory.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/angular-materialize.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $(".button-collapse").sideNav();
+      $('.parallax').parallax();
+    })
+  </script>
   <!-- End of Scripts -->
-
-</head>
-
-<body ng-controller="signUp as su" class="container orange lighten-5">
-
-  {{ 5 + 5 }}
-
-  <!-- top nav bar -->
-  <div class="row">
-    <nav>
-      <div class="nav-wrapper lime darken-4">
-        <a class="brand-logo animated fadeInRight center-align">Kush Taxi</a>
-        <ul class="right hide-on-med-and-down">
-          <li class="links"><span class="left">Menu</span><a data-activates="slide-out" class="button-collapse show-on-large element-animation" id="car"><i class="fa fa-taxi "></i></a></li>
-          <li class="links"><a href="#/signup" class="waves-effect waves-light ">Join</a></li>
-          <li class="links"><a href="#/login" class="waves-effect waves-light ">Patient Login</a></li>
-          <li class="links"><a href="#/cart" class="waves-effect waves-light " id="cart"><i class="fa fa-cart-plus "></i></a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <!-- End of top nav bar -->
-
-
-
-<!-- Pop Out Side Menu -->
-<div class="row orange lighten-5 z-depth-5">
-  <div class="container brown-text text darken-2">
-    <ul id="slide-out" class="side-nav">
-      <li><a href="#/products">Products</a></li>
-      <li><a href="#/locations">Service Area</a></li>
-      <li><a href="#/orders">Order History</a></li>
-      <li><a href="#/contact">Contact Us</a></li>
-    </ul>
-  </div>
-</div>
-<!-- End of Pop Out Side Menu  -->
-
-<div ui-view></div>
-
-
-<script type="text/javascript">
-$(document).ready(function(){
-
-  $(".button-collapse").sideNav();
-})
-</script>
-
-<!-- Footer  -->
-  <div class="row">
-    <footer class="page-footer lime darken-4 z-depth-5">
-            <div class="container">
-              <div class="row ">
-                <div class="col s6 offset-s6">
-                  <h5 class="white-text">Hours & Info</h5>
-                  <p class="grey-text text-lighten-4">
-                    Serving Venice, Santa Monica, Marina Del Rey<br>
-                    Sun-Thurs: 2pm-Midnight, Fri-Sat: 2pm-1am<br>
-                    310.625.4424<br>
-                    gethigh@kushtaxi.com
-                  </p>
-                </div>
-              </div>
-            <div class="footer-copyright lime darken-4">
-              <div class="container">
-              © 2016 E.T. Productions
-              <a class="grey-text text-lighten-4 right" href="#/contact">Contact Us</a>
-              </div>
-            </div>
-          </div>
-      </footer>
-    </div>
-<!-- End of Footer -->
-
+  <!--------------------------------->
 </body>
+
 </html>

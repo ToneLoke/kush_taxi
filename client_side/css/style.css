@@ -1,7 +1,22 @@
-
-header, main, footer {
-  padding-left: 240px;
+/*========FLEX BOX SETUP=========*/
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
+main {
+  flex: 1 0 auto;
+}
+/*====================*/
+/*------img size for parallax------*/
+#pImg{
+  /*background-position: 50% 210px !important;*/
+  /*height: 100%;*/
+  /*background-size: cover;*/
+  /*background-image: 'Marijuana-Grow-Room-Closeup.jpg';*/
+
+}
+/*=================================*/
 
 @media only screen and (max-width : 992px) {
   header, main, footer {
