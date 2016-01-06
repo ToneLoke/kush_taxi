@@ -21,11 +21,16 @@
     <nav>
       <div class="nav-wrapper lime darken-4">
         <a class="brand-logo animated fadeInRight center-align">Kush Taxi</a>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li class="links">
             <span class="left">Menu</span><a data-activates="slide-out" class="button-collapse show-on-large element-animation" id="car"><i class="fa fa-taxi "></i></a></li>
           <li class="links"><a href="#/signup" class="waves-effect waves-light ">Join</a></li>
           <li class="links"><a href="#/login" class="waves-effect waves-light ">Patient Login</a></li>
+          <!-- Modal Trigger -->
+          <li class="links">
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+          </li>
           <li class="links"><a href="#/cart" class="waves-effect waves-light " id="cart"><i class="fa fa-cart-plus "></i></a></li>
         </ul>
       </div>
@@ -38,6 +43,140 @@
     <div class="parallax-container">
       <div class="parallax" parallax>
         <img id="pImg" ng-src="grow_room.jpg">
+      </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content lighten-5 z-depth-5">
+        <!-- SignUp Form-->
+                <div class="brown-text text darken-2">
+                    <h5>Register</h5>
+                          <form ng-submit="su.submit()">
+                              <div class="input-field">
+                                <input ng-model="su.patient.fname" id="first_name" type="text" class="validate">
+                                <label for="first_name">First Name</label>
+                              </div>
+                              <div class="input-field">
+                                <input ng-model="su.patient.lname" id="last_name" type="text" class="validate">
+                                <label for="last_name">Last Name</label>
+                              </div>
+                              <div class="input-field">
+                                <input ng-model="su.patient.username" id="username" type="text" class="validate">
+                                <label for="username">Username</label>
+                              </div>
+                              <div class="input-field">
+                                <input ng-model="su.patient.email" id="email" type="email" class="validate">
+                                <label for="email">Email</label>
+                              </div>
+                              <div class="input-field">
+                                <input ng-model="su.patient.password" id="password" type="password" class="validate">
+                                <label for="password">Password</label>
+                              </div>
+
+                    <br>
+                    <h5>Personal Information</h5>
+
+                        <div class="input-field">
+                          <input ng-model="su.patient.addone" id="address_one" type="text" class="validate">
+                          <label for="address_one">Street Address 1</label>
+                        </div>
+                        <div class="input-field">
+                          <input ng-model="su.patient.addtwo" id="address_two" type="text" class="validate">
+                          <label for="address_two">Street Address 2</label>
+                        </div>
+                        <div class="input-field">
+                          <input ng-model="su.patient.city" id="city" type="text" class="validate">
+                          <label for="city">City</label>
+                        </div>
+                        <div class="input-field">
+                          <input ng-model="su.patient.state" id="state" type="text" class="validate">
+                          <label for="state">State</label>
+                        </div>
+                        <div class="input-field">
+                          <input ng-model="su.patient.zip" id="zip" type="text" class="validate">
+                          <label for="zip">Zip Code</label>
+                        </div>
+                        <div class="input-field">
+                          <input ng-model="su.patient.phone" id="phone" type="text" class="validate">
+                          <label for="phone">Phone Number</label>
+                        </div>
+                        <div class="input-field">
+                          <input ng-model="su.patient.dob" id="dob" type="text" class="validate">
+                          <label for="dob">Date of Birth</label>
+                        </div>
+                        <div class="input-field">
+                          <input ng-model="su.patient.dl" id="dl" type="text" class="validate">
+                          <label for="dl">Driver's License#</label>
+                        </div>
+                        <div class="input-field">
+                          <input ng-model="su.patient.dname" id="d_name" type="text" class="validate">
+                          <label for="d_name">Recommending Doctor's Name</label>
+                        </div>
+                        <div class="input-field">
+                          <input ng-model="su.patient.dphone" id="doc_phone" type="text" class="validate">
+                          <label for="doc_phone">Doctor's Number</label>
+                        </div>
+                        <div class="input-field">
+                          <input ng-model="su.patient.dverify" id="d_verify" type="text" class="validate">
+                          <label for="d_verify">Doctor's Verification Website </label>
+                        </div>
+                        <div class="input-field">
+                          <input ng-model="su.patient.pid" id="p_id" type="text" class="validate">
+                          <label for="p_id">Patient ID#</label>
+                        </div>
+                        <div class="input-field">
+                          <input ng-model="su.patient.recexp" id="rec_exp" type="text" class="validate">
+                          <label for="rec_exp">Rec Expiration Date</label>
+                        </div>
+                        <div class="input-field">
+                          <input ng-model="su.patient.refer" id="refer" type="text" class="validate">
+                          <label for="refer">How did you hear about us?</label>
+                        </div>
+
+
+
+                    <br>
+                    <h5>Upload Documents</h5>
+                        <div class="file-field input-field">
+                          <div class="btn-floating lime darken-4 left">
+                            <i class="fa fa-file-image-o"></i>
+                            <input ng-model="su.patient.idImg" type="file"/>
+                          </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate"  id="photo" type="text" placeholder="Upload Photo ID">
+                        </div>
+                      </div>
+                      <div class="file-field input-field">
+                        <div class="btn-floating lime darken-4 left">
+                          <i class="fa fa-file-o"></i>
+                          <input type="file"/>
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input ng-model="su.patient.recImg" class="file-path validate"  id="rec" type="text" placeholder="Upload Recommendation">
+                        </div>
+                      </div>
+
+                    <br>
+                    <h5>Member Agreement</h5>
+                      <h7>I declare under penalty of perjury that the information provided on this membership agreement is true and correct. I further declare under penalty of perjury that I am a medical cannabis patient and will not divert my medicine for non-medical use or for use by a non-member. I further declare under penalty of perjury that I am not a member of law enforcement and will not divert any medicine for the purpose of any criminal investigations. I have read and understand the above requirements and agree to follow these guidelines. I acknowledge that I have been offered the ability to review a copy of the Articles of Incorporation, Bylaws, and Membership Rules and Policies. Additionally, I hereby authorize the release of my medical information concerning my diagnosis, condition or prognosis to the Collective and its authorized representatives for purposes of verifying the validity of my medical recommendation and the valid operation of the Collective pursuant to the Compassionate Use Act and Medical Marijuana Program Act.</h7>
+                        <div class="input-field">
+                          <input ng-model="su.patient.agreement" id="agreement" type="text" class="validate">
+                          <label for="agreement">Type "I agree" to continue</label>
+                        </div>
+
+                    <!-- Submit Button -->
+                      <div class="input-field col s1 offset-s11">
+                        <button type="submit" class="btn modal-action modal-close waves-effect waves-light lime darken-4">Submit</button>
+                      </div>
+                    </form>
+
+
+
+
+        </div>
+        <!-- End of SignUp -->
+
       </div>
     </div>
     <!-- end parallax -->
@@ -62,7 +201,7 @@
     <!-- parallax container -->
     <div class="parallax-container">
       <div class="parallax" parallax>
-        <img  ng-src="grow_room.jpg">
+        <img ng-src="grow_room.jpg">
       </div>
     </div>
     <!-- end parallax -->
@@ -107,9 +246,29 @@
   <script type="text/javascript">
     $(document).ready(function() {
 
-      $(".button-collapse").sideNav();
+      $(".button-collapse").sideNav({
+        menuWidth: 300,
+        edge: 'left',
+        closeOnClick: true
+      });
+
       $('.parallax').parallax();
-    })
+
+      $('.modal-trigger').leanModal({
+        dismissible: true, // Modal can be dismissed by clicking outside of the modal
+        opacity: .5, // Opacity of modal background
+        in_duration: 300, // Transition in duration
+        out_duration: 200, // Transition out duration
+        ready: function() {
+          alert('Ready');
+        }, // Callback for Modal open
+        complete: function() {
+            alert('Closed');
+          } // Callback for Modal close
+      });
+
+
+    });
   </script>
   <!-- End of Scripts -->
   <!--------------------------------->
