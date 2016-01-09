@@ -1,6 +1,6 @@
 (function() {
-  angular.module( 'appRoutes', ['ui.router'] )
-    .config( function ( $stateProvider, $urlRouterProvider ) {
+  angular.module('appRoutes', ['ui.router'])
+    .config(function($stateProvider, $urlRouterProvider) {
 
       $urlRouterProvider.otherwise('/')
 
@@ -14,28 +14,28 @@
       })
 
       // LOGIN PAGE STATES =================================
-        .state('logIn', {
+      .state('logIn', {
         url: '/login',
         templateUrl: 'partials/logIn.html',
         controllerAs: "logIn as ln"
       })
 
       // CART STATES ==========================
-        .state('cart', {
+      .state('cart', {
         url: '/cart',
         templateUrl: '/partials/cart.html'
-        // controllerAs: 'cart as ct'
+          // controllerAs: 'cart as ct'
       })
 
       // PRODUCT STATES =======================
-        .state('products', {
+      .state('products', {
         url: '/products',
         templateUrl: '/partials/products.html'
-        // controllerAs: 'products as pr'
+          // controllerAs: 'products as pr'
       })
 
       // ORDERS STATES ======================
-        .state('orders', {
+      .state('orders', {
         url: '/orders',
         templateUrl: '/partials/orders.html',
         controllerAs: 'patients as ps'
@@ -43,20 +43,20 @@
 
       // CONTACT STATES ======================
 
-        .state('contact', {
+      .state('contact', {
         url: '/contact',
         templateUrl: '/partials/contact.html'
-        // controllerAs: 'contact as co'
+          // controllerAs: 'contact as co'
       })
 
       // LOCATIONS STATES ======================
 
-        .state('locations', {
+      .state('locations', {
         url: '/locations',
         templateUrl: '/partials/locations.html'
-        // controllerAs: 'locations as lc'
+          // controllerAs: 'locations as lc'
       })
 
 
-    });
-}());
+    })
+}())
