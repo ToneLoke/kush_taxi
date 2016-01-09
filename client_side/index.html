@@ -25,14 +25,22 @@
         <ul class="right hide-on-med-and-down">
           <li class="links">
             <span class="left">Menu</span><a data-activates="slide-out" class="button-collapse show-on-large element-animation" id="car"><i class="fa fa-taxi "></i></a></li>
-          <li class="links"><a href="#/signup" class="waves-effect waves-light ">Join</a></li>
-          <li class="links"><a href="#/login" class="waves-effect waves-light ">Patient Login</a></li>
-          <!-- Modal Trigger -->
+
+          <!-- Modal Trigger 1 -->
           <li class="links">
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+            <a href="#modal1" class="waves-effect waves-light modal-trigger">Join</a>
           </li>
+          <!-- End Modal Trigger 1 -->
+
+          <!-- Modal Trigger 2 -->
+          <li class="links">
+            <a href="#modal2" class="waves-effect waves-light modal-trigger">Patient Login</a>
+          </li>
+          <!-- End Modal Trigger 2 -->
+
           <li class="links"><a href="#/cart" class="waves-effect waves-light " id="cart"><i class="fa fa-cart-plus "></i></a></li>
         </ul>
+
       </div>
     </nav>
   </header>
@@ -46,7 +54,7 @@
       </div>
     </div>
 
-    <!-- Modal Structure -->
+    <!-- Modal Structure 1 -->
     <div id="modal1" class="modal">
       <div class="modal-content lighten-5 z-depth-5">
         <!-- SignUp Form-->
@@ -179,6 +187,51 @@
 
       </div>
     </div>
+
+      <!-- End Modal Structure 1 -->
+
+
+
+
+
+  <!-- Modal Structure 2 -->
+    <div id="modal2" class="modal">
+      <div class="modal-content lighten-5 z-depth-5">
+
+          <!-- Patient Login Form -->
+              <div class="brown-text text darken-2">
+                <h5>Patient Portal</h5>
+                <form ng-submit="ln.submit()">
+                  <div class="row">
+                    <div class="input-field">
+                        <i class="fa fa-envelope prefix"></i>
+                        <input id="email_login" type="email" class="validate">
+                        <label for="email_login">Email</label>
+                    </div>
+                  </div>
+                    <div class="row">
+                        <div class="input-field">
+                            <i class="fa fa-key prefix"></i>
+                            <input id="password_login" type="password" class="validate">
+                            <label for="password_login">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <button type="submit" class="btn-floating btn-large waves-effect waves-light lime darken-4 right"><i class="material-icons">input</i></button>
+                      </div>
+
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <!-- End Patient Login Form -->
+
+            </div>
+          </div>
+
+          <!-- End Modal Structure 2 -->
+
     <!-- end parallax -->
     <!--------------------------------->
     <!-- Pop Out Side Menu -->
@@ -260,10 +313,10 @@
         in_duration: 300, // Transition in duration
         out_duration: 200, // Transition out duration
         ready: function() {
-          alert('Ready');
+          // alert('Ready');
         }, // Callback for Modal open
         complete: function() {
-            alert('Closed');
+            // alert('Closed');
           } // Callback for Modal close
       });
 
