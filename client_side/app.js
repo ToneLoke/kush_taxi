@@ -20,8 +20,8 @@
         console.log('loading file')
         var fd = new FormData()
         fd.append('patient', angular.toJson(data))
-        fd.append('files', file[0])
-        fd.append('files', file[1])
+        fd.append('file', file[0])
+        fd.append('file', file[1])
         $http.post(uploadUrl, fd, {
             transformRequest: angular.identity,
             headers: {

@@ -5,7 +5,11 @@
       $urlRouterProvider.otherwise('/')
 
       $stateProvider
-
+      .state('home', {
+        url: '/',
+        templateUrl: '/partials/home.html'
+          // controllerAs: 'locations as lc'
+      })
       // SIGNUP STATES ========================================
         .state('signUp', {
         url: '/signup',
@@ -38,7 +42,7 @@
       .state('orders', {
         url: '/orders',
         templateUrl: '/partials/orders.html',
-        controllerAs: 'patients as ps'
+        controllerAs: 'orders as os'
       })
 
       // CONTACT STATES ======================
@@ -55,6 +59,14 @@
         url: '/locations',
         templateUrl: '/partials/locations.html'
           // controllerAs: 'locations as lc'
+      })
+
+      // USERS STATES =================
+
+      .state('patients', {
+        url: '/patients',
+        templateUrl: 'partials/patients.html'
+          //controllerAs: 'patients as ps'
       })
 
 
