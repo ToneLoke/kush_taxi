@@ -1,25 +1,24 @@
-var
-  db = require('./models.js'),
-  fs = require('fs')
+var db = require('./models.js'),
+    fs = require('fs')
 
 module.exports = {
   // CREATE A PATIENT
   patient: {
-    show: function(req, res) {
+    show: function (req, res) {
       db.Patient.find()
     },
-    create: function(req, res) {
-      console.log("===patient===",req.body.patient)
-      console.log("===files===",req.files)
+    create: function (req, res) {
+      console.log('===patient===', req.body.patient)
+      console.log('===files===', req.files)
       if (req.body) {
         var tmp_path = req.files.file.path
         var target_path = '/Users/David/Desktop/WORKSPACE/kush_taxi/server_side/uploads/' + req.files.file.name
-        fs.rename(tmp_path, target_path, function(err) {
+        fs.rename(tmp_path, target_path, function (err) {
           if (err) throw err
-            // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
-          fs.unlink(tmp_path, function() {
+          // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
+          fs.unlink(tmp_path, function () {
             if (err) throw err
-            // res.send('File uploaded to: ' + target_path + ' - ' + req.files.file.size + ' bytes')
+          // res.send('File uploaded to: ' + target_path + ' - ' + req.files.file.size + ' bytes')
           })
         })
 
@@ -30,11 +29,11 @@ module.exports = {
         patient.password = req.body.password
         patient.recImg.data = fs.readFileSync(target_path)
         patient.recImg.contentType = req.files.file.type
-        patient.save(function(err) {
+        patient.save(function (err) {
           if (err) res.json({
-            message: err.message,
-            success: false
-          })
+              message: err.message,
+              success: false
+            })
           res.json({
             message: 'Patient Added!',
             success: true
