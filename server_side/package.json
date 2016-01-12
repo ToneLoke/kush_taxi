@@ -4,6 +4,8 @@
   "description": "MMJ Delivery Service",
   "main": "server.js",
   "dependencies": {
+    "bcrypt": "^0.8.5",
+    "connect-multiparty": "^2.0.0",
     "cors": "^2.7.1"
   },
   "devDependencies": {},

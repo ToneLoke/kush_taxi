@@ -1,7 +1,24 @@
-
-header, main, footer {
-  padding-left: 240px;
+/*========FLEX BOX SETUP=========*/
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
+
+main {
+  flex: 1 0 auto;
+}
+
+/*====================*/
+/*------img size for parallax------*/
+#pImg{
+  /*background-position: 50% 210px !important;*/
+  /*height: 100%;*/
+  /*background-size: cover;*/
+  /*background-image: 'Marijuana-Grow-Room-Closeup.jpg';*/
+
+}
+/*=================================*/
 
 @media only screen and (max-width : 992px) {
   header, main, footer {
@@ -71,7 +88,7 @@ header, main, footer {
   }
   60% {
     opacity:1;
-    transform:  translate(-40px,0px)  skewX(30deg) ;
+    transform:  translate(-900px,0px)  skewX(30deg) ;
   }
   80% {
     opacity:1;
@@ -109,7 +126,7 @@ header, main, footer {
   }
   60% {
     opacity:1;
-    -webkit-transform:  translate(-40px,0px)  skewX(30deg) ;
+    -webkit-transform:  translate(-900px,0px)  skewX(30deg) ;
   }
   80% {
     opacity:1;

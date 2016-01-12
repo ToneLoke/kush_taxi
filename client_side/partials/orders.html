@@ -1,0 +1,32 @@
+    <!-- Past Orders Table -->
+<div class="row orange lighten-5 z-depth-5" ng-controller="patients as ps">
+  <div class="brown-text text darken-2">
+    <ul class="collapsible " data-collapsible="accordion" watch>
+        <li ng-repeat="order in ps.orders">
+            <div class="collapsible-header">
+              <span class="left"><i class="fa fa-shopping-bag"></i> {{ order.id }}</span>
+              <span class="left"><i class="fa fa-money"></i>{{ order.total | currency }}</span>
+              <span class="left"><i class="fa fa-calendar"></i>{{ order.date }}</span>
+            </div>
+            <div class="collapsible-body">
+              <ul>
+                <li ng-repeat="item in order.items">
+                  <span> Name: {{ item.name }} </span> ---
+                  <span> Qty: {{ item. qty }} </span> ---
+                  <span> Price: {{ item.price }} </span>
+                </li>
+              </ul>
+            </div>
+        </li>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $('.collapsible').collapsible({
+        accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+});
+</script>
+<!-- End of Past Orders Table -->
