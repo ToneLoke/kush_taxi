@@ -1,5 +1,6 @@
 var db = require('./models.js'),
-  fs = require('fs')
+  fs = require('fs'),
+  twilioNotifications = require('./twilioNotifications')
 
 module.exports = {
   // ==========================================

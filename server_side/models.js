@@ -40,6 +40,7 @@ var bcrypt = require('bcrypt'),
     dob: Date,
     orders: [orderSchema],
     locations: [locationSchema],
+    recUrl: String,
     recImg: {
       data: Buffer,
       contentType: String

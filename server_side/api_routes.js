@@ -2,7 +2,9 @@ var ctrls = require('./controllers.js'),
   apiRouter = require('express').Router(),
   multipart = require('connect-multiparty')(),
   jwt = require('jsonwebtoken'),
-  secret = 'meow'
+  secret = 'meow',
+  twilioNotifications = require('./twilioNotifications')
+
 
 apiRouter.route('/patients')
   .post(multipart, ctrls.patient.create)

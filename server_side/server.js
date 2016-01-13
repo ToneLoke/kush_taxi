@@ -21,6 +21,10 @@ app.use( bodyParser.urlencoded({
 app.use( bodyParser.json() )
 app.use( cors())
 
+router.get('/error', function(req, resp) {
+	throw new Error('Derp. An error occurred.');
+})
+
 app.use( '/api', apiRoutes )
 
 app.listen(3000, function(){
