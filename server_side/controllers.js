@@ -1,12 +1,10 @@
 var db = require('./models.js'),
-    fs = require('fs')
+  fs = require('fs')
 
 module.exports = {
   // CREATE A PATIENT
   patient: {
-    show: function (req, res) {
-      db.Patient.find()
-    },
+    // create a new patient profile
     create: function (req, res) {
       console.log('===patient===', req.body.patient)
       console.log('===files===', req.files)
@@ -22,11 +20,7 @@ module.exports = {
           })
         })
 
-        var patient = new db.Patient()
-        patient.fname = req.body.fname
-        patient.lname = req.body.fname
-        patient.email = req.body.email
-        patient.password = req.body.password
+        var patient = new db.Patient(req.body)
         patient.recImg.data = fs.readFileSync(target_path)
         patient.recImg.contentType = req.files.file.type
         patient.save(function (err) {
@@ -40,7 +34,38 @@ module.exports = {
           })
         })
       }
-    }
-  }
+    },// End of create method
+    signIn: function (req, res) {
+      User.findOne({
+        email: req.body.email
+      }, function (err, user) {
+        if (err) res.json({
+            err: err
+          })
+        if (user) {
+          if (user.authenticate(req.body.password)) {
+            var token = jwt.sign({
+              name: user.name,
+              email: user.email
+            },
+              secret, {
+                expiresInMinutes: 1440
+              })
+
+            res.json({
+              token: token,
+              message: 'valid user'
+            })
+          } else
+            res.json({
+              message: 'invalid user'
+            })
+        } else
+          res.json({
+            message: 'user not found'
+          })
+      })
+    }//End of Sign In Method
+  } // End of Patient Controller Object
 
 }
