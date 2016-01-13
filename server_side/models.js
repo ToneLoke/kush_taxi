@@ -18,11 +18,12 @@ var bcrypt = require('bcrypt'),
     },
     treats: [String]
   }),
-  // =====Item Model===== //
+  // ===== End Item Model===== //
   orderSchema = new Schema({
     order_date: Date,
     total: Number,
-    items: [itemSchema]
+    items: [itemSchema],
+    patient: { type: Schema.Types.ObjectId, ref: 'Patient' }
   }),
   locationSchema = new Schema({
     street: String,

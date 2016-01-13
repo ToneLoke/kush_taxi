@@ -2,15 +2,60 @@ var db = require('./models.js'),
   fs = require('fs')
 
 module.exports = {
-  // CREATE A PATIENT
+  // ==========================================
+  // Order Controller Object
+  // ==========================================
+  order: {
+    // All order data
+    all: function (req, res) {
+      console.log('===========All Order Data Request++++++++++++++++')
+      db.Order.find({}, function (err, orders) {
+        if (err) res.json({error: err, message: 'Error', success: false})
+        res.json(orders)
+      })
+    }, // End of all method
+    create: function (req, res) {
+      console.log('=====Creating new order request+++++++')
+      var order = db.Order.new(req.body.order)
+      order.save(function (err) {
+        if (err) res.json({
+            message: err.message,
+            success: false
+          })
+        res.json({
+          message: 'Order Created!',
+          success: true
+        })
+      })
+    }
+  }, // End of Order Object
+  // ==========================================
+  // Patient Controller Object
+  // ==========================================
   patient: {
+    // All patient data
+    all: function (req, res) {
+      console.log('=======All Patient Data Request+++++++++++')
+      db.Patient.find({}, function (err, patients) {
+        if (err) res.json({error: err, message: 'Error', success: false})
+        res.json(patients)
+      })
+    }, // ENd of all patient data
+    // Single Patient Data
+    data: function (req, res) {
+      console.log('========Single patient data request==========')
+      db.Patient.findById(req.param('_id'), function (err, patient) {
+        if (err) res.json({error: err, message: 'Error', success: false})
+        res.json(patient)
+      })
+    }, // get patient data
     // create a new patient profile
     create: function (req, res) {
       console.log('===patient===', req.body.patient)
       console.log('===files===', req.files)
       if (req.body) {
         var tmp_path = req.files.file.path
-        var target_path = '/Users/David/Desktop/WORKSPACE/kush_taxi/server_side/uploads/' + req.files.file.name
+        var target_path = '/patients/David/Desktop/WORKSPACE/kush_taxi/server_side/uploads/' + req.files.file.name
         fs.rename(tmp_path, target_path, function (err) {
           if (err) throw err
           // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
@@ -34,38 +79,41 @@ module.exports = {
           })
         })
       }
-    },// End of create method
+    }, // End of create method
     signIn: function (req, res) {
-      User.findOne({
+      patient.findOne({
         email: req.body.email
-      }, function (err, user) {
+      }, function (err, patient) {
         if (err) res.json({
             err: err
           })
-        if (user) {
-          if (user.authenticate(req.body.password)) {
+        if (patient) {
+          if (patient.authenticate(req.body.password)) {
             var token = jwt.sign({
-              name: user.name,
-              email: user.email
+              name: patient.fname,
+              email: patient.email
             },
               secret, {
-                expiresInMinutes: 1440
+                expiresInMinutes: 52000
               })
 
             res.json({
               token: token,
-              message: 'valid user'
+              message: 'valid patient'
             })
           } else
             res.json({
-              message: 'invalid user'
+              message: 'invalid patient'
             })
         } else
           res.json({
-            message: 'user not found'
+            message: 'patient not found'
           })
       })
-    }//End of Sign In Method
-  } // End of Patient Controller Object
+    } // End of Sign In Method
+  }
+  // ==========================================
+  // End of Patient Controller Object
+  // ==========================================
 
 }
