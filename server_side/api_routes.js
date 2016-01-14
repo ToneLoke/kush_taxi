@@ -16,6 +16,7 @@ apiRouter.route('/authenticate')
 // Everyone view all products
 apiRouter.route('/products')
   .get(ctrls.product.all)
+  .post(ctrls.product.create)
 // MIDDLEWARE AUTHENTICATION USING JOTS
 apiRouter.use(function (req, res, next) {
 // LOOK FOR TOKEN IN 3 LOCATIONS BODY OBJECT PARAMETER KEY OR HEADER OBJECT
@@ -33,7 +34,7 @@ apiRouter.use(function (req, res, next) {
 })
 // Create and update products for admin use only
 apiRouter.route('/products')
-  .post(ctrls.product.create)
+
   // .put(ctrls.product.update)
 // Show all patients for admin use only
 apiRouter.route('/patients')

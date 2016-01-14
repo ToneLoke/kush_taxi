@@ -7,23 +7,20 @@
 
   signUp.$inject = ['$http', 'fileUpload']
 
-  function productsController ($http) {
+  function productsController (leafly, strainFactory) {
     console.log('productsController+++++++++++++++')
     var ctrlP = this
     ctrlP.strains = []
-    $http({
-      method: 'POST',
-      url: 'http://data.leafly.com/strains',
-      data: {Page: 0, Take: 10},
-      headers: {
-        'Content-Type': 'application/json',
-        'app_key': 'd438ce1df22b6dfa36c8a4d73221fa55',
-        'app_id': '2feac533'
-      }
-    })
+    leafly.allStrains()
       .then(function (response) {
         console.log('From Leafly=========', response.data.Strains)
         ctrlP.strains = response.data.Strains
+        ctrlP.strains.forEach(function (index, strain) {
+          strainFactory.createStrain(strain)
+            .then(function (res) {
+              console.log(res)
+            })
+        })
       }, function (response) {
         console.log(response)
       })

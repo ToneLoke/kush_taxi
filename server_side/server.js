@@ -7,7 +7,8 @@ var
   bodyParser = require('body-parser'),
   apiRoutes = require('./api_routes.js'),
   cors = require('cors'),
-  mongodb_url = process.env.MONGODB_URL || 'mongodb://localhost/kushtaxi',
+  config = require('./config'),
+  mongodb_url = config.mongolabs || 'mongodb://localhost/kushtaxi',
   port = process.env.PORT || 3000
 // =======================================
 // CONNECT TO LOCAL MONGO DB OR MONGOLABS
