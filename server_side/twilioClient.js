@@ -1,7 +1,9 @@
-var config = require('./config')
-var client = require('twilio')(config.accountSid, config.authToken)
+var
+  config = require('./config'),
+  client = require('twilio')(config.accountSid, config.authToken)
 
 module.exports.sendSms = function (to, message) {
+  console.log('======SENDING SMS TO====', to)
   client.messages.create({
     body: message,
     to: to,

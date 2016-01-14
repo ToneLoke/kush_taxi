@@ -1,6 +1,5 @@
-var db = require('./models.js'),
-  fs = require('fs'),
-  twilioNotifications = require('./twilioNotifications')
+var db = require('./models'),
+  fs = require('fs')
 
 module.exports = {
   // ==========================================
@@ -52,11 +51,10 @@ module.exports = {
     }, // get patient data
     // create a new patient profile
     create: function (req, res) {
-      console.log('===patient===', req.body.patient)
       console.log('===files===', req.files)
-      if (req.body) {
+      if (req.body.patient) {
         var tmp_path = req.files.file.path
-        var target_path = '/patients/David/Desktop/WORKSPACE/kush_taxi/server_side/uploads/' + req.files.file.name
+        var target_path = './uploads/' + req.files.file.name
         fs.rename(tmp_path, target_path, function (err) {
           if (err) throw err
           // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
@@ -66,7 +64,8 @@ module.exports = {
           })
         })
 
-        var patient = new db.Patient(req.body)
+        console.log('===patient===', JSON.parse(req.body.patient))
+        var patient = new db.Patient(JSON.parse(req.body.patient))
         patient.recImg.data = fs.readFileSync(target_path)
         patient.recImg.contentType = req.files.file.type
         patient.save(function (err) {
