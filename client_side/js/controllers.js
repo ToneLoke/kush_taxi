@@ -1,11 +1,33 @@
-(function () {
+;(function () {
   angular.module('controllers', [])
     .controller('patients', patients)
     .controller('signUp', signUp)
     .controller('logIn', logIn)
+    .controller('productsController', productsController)
 
   signUp.$inject = ['$http', 'fileUpload']
 
+  function productsController ($http) {
+    console.log('productsController+++++++++++++++')
+    var ctrlP = this
+    ctrlP.strains = []
+    $http({
+      method: 'POST',
+      url: 'http://data.leafly.com/strains',
+      data: {Page: 0, Take: 10},
+      headers: {
+        'Content-Type': 'application/json',
+        'app_key': 'd438ce1df22b6dfa36c8a4d73221fa55',
+        'app_id': '2feac533'
+      }
+    })
+      .then(function (response) {
+        console.log('From Leafly=========', response.data.Strains)
+        ctrlP.strains = response.data.Strains
+      }, function (response) {
+        console.log(response)
+      })
+  }
   function patients () {
     var patient = this
     patient.orders = [{

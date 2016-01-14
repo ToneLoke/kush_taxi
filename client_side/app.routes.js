@@ -1,5 +1,5 @@
 (function () {
-  angular.module('appRoutes', ['ui.router'])
+  angular.module('appRoutes', ['ui.router','controllers'])
     .config(function ($stateProvider, $urlRouterProvider) {
       $urlRouterProvider.otherwise('/')
 
@@ -13,14 +13,14 @@
         .state('signUp', {
           url: '/signup',
           templateUrl: 'partials/signUp.html',
-          controllerAs: 'signUp as su'
+          controller: 'signUp as su'
         })
 
         // LOGIN PAGE STATES =================================
         .state('logIn', {
           url: '/login',
           templateUrl: 'partials/logIn.html',
-          controllerAs: 'logIn as ln'
+          controller: 'logIn as ln'
         })
 
         // CART STATES ==========================
@@ -33,15 +33,15 @@
         // PRODUCT STATES =======================
         .state('products', {
           url: '/products',
-          templateUrl: '/partials/products.html'
-        // controllerAs: 'products as pr'
+          templateUrl: '/partials/products.html',
+          controller: 'productsController as pr'
         })
 
         // ORDERS STATES ======================
         .state('orders', {
           url: '/orders',
           templateUrl: '/partials/orders.html',
-          controllerAs: 'orders as os'
+          controller: 'orders as os'
         })
 
         // CONTACT STATES ======================
