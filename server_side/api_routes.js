@@ -34,14 +34,14 @@ apiRouter.use(function (req, res, next) {
 // Create and update products for admin use only
 apiRouter.route('/products')
   .post(ctrls.product.create)
-  .put(ctrls.product.update)
+  // .put(ctrls.product.update)
 // Show all patients for admin use only
 apiRouter.route('/patients')
   .get(ctrls.patient.all)
 // Single Show and Update for patient
 apiRouter.route('/patient/:_id')
   .get(ctrls.patient.data)
-  .put(ctrls.patient.update)
+  // .put(ctrls.patient.update)
 // api endpoint to get user information
 apiRouter.get('/me', function (req, res) {
   res.send(req.decoded)

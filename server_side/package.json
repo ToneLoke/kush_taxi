@@ -7,7 +7,9 @@
     "bcrypt": "^0.8.5",
     "connect-multiparty": "^2.0.0",
     "cors": "^2.7.1",
-    "jsonwebtoken": "^5.5.4"
+    "dotenv": "^1.2.0",
+    "jsonwebtoken": "^5.5.4",
+    "twilio": "^2.8.0"
   },
   "devDependencies": {},
   "scripts": {

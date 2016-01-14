@@ -1,7 +1,39 @@
-var db = require('./models'),
+var
+  db = require('./models'),
   fs = require('fs')
 
 module.exports = {
+  // ==========================================
+  // Product Controller Object
+  // ==========================================
+  product: {
+    // All product data
+    all: function (req, res) {
+      console.log('======All Product Data Request++++++++')
+      db.Product.find({}, function (err, products) {
+        if (err) res.json({error: err, message: 'Error', success: false})
+        res.json(products)
+      })
+    }, // End of All Method
+    // Show a single product data
+    data: function (req, res) {
+      console.log('======Single product data request++++++++')
+      db.Product.findById(req.param('_id'), function (err, product) {
+        if (err) res.json({error: err, message: 'Error', success: false})
+        res.json(product)
+      })
+    }, // End of data method
+    create: function (req, res) {
+      console.log('======Creating a new product request+++++++')
+      if (req.body.product) {
+        var product = new db.Product(req.body.product)
+        product.save(function (err) {
+          if (err) res.json({message: err.message, success: false})
+          res.json({message: 'Order Created!', success: true})
+        })
+      }
+    } // End of create method
+  }, // End of Product Controller Object
   // ==========================================
   // Order Controller Object
   // ==========================================
@@ -48,7 +80,7 @@ module.exports = {
         if (err) res.json({error: err, message: 'Error', success: false})
         res.json(patient)
       })
-    }, // get patient data
+    }, // end data method
     // create a new patient profile
     create: function (req, res) {
       console.log('===files===', req.files)
