@@ -1,0 +1,121 @@
+
+<!--Select Categories -->
+<div class="row">
+  <div class="col s12 lime accent-2">
+    <ul class="tabs lime accent-2" tabs>
+      <li class="tab col s3 ">
+        <a ui-sref="javascript">
+          <div class="chip">
+            <img src="/images/Flowers.jpg" alt="Flowers">
+            Flowers
+          </div>
+        </a>
+      </li>
+      <li class="tab col s3">
+        <a ui-sref="angularjs">
+          <div class="chip">
+            <img src="/images/edibles.jpg" alt="Edibles">
+            Edibles
+          </div>
+        </a>
+      </li>
+      <li class="tab col s3">
+        <a ui-sref="angularjs">
+          <div class="chip">
+            <img src="/images/Concentrates.jpg" alt="Concentrates">
+            Concentrates
+          </div>
+        </a>
+      </li>
+      <li class="tab col s3">
+        <a ui-sref="jquery">
+          <div class="chip">
+            <img src="/images/clones.jpeg" alt="Clones">
+            Clones
+          </div>
+        </a>
+      </li>
+      <!--<li class="tab col s3"><a href="#test4">Test 4</a></li>-->
+    </ul>
+  </div>
+</div>
+<!-- Template for Products -->
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col s3 lime accent-2 z-depth-5 products">
+    <div class="card small hoverable orange lighten-5">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator scalable" src="/images/Ultra-violet-sativa.jpg"/>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator lime accent-2">Ultra Violet</span>
+        <div class="action-btn horizontal right" style="bottom: 45px; right: 24px;">
+        <br>
+        <br>
+        <br>
+          <a class="btn-floating btn red">
+            <i class="material-icons">mode_edit</i>
+          </a>
+              <ul>
+                <li><a class="btn-floating blue"><i class="material-icons">thumb_up</i></a></li>
+                <li><a class="btn-floating green"><i class="material-icons">thumb_down</i></a></li>
+                <li><a class="btn-floating yellow darken-1"><i class="material-icons">info_outline</i></a></li>
+                <li><a class="btn-floating red"><i class="material-icons">shopping_cart</i></a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title lime accent-2">Ultra Violet Prices<i class="material-icons right">close</i></span>
+        <p>1/8: $60<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons right">add</i></a></p>
+        <p>1/4: $100<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons right">add</i></a></p>
+        <p>1/2: $180<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons right">add</i></a></p>
+        <p>Oz: $320<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons right">add</i></a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col s3 lime accent-2 z-depth-5">
+    <div class="card small hoverable lime accent-2">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator scalable" src="/images/green-krack-sativa.jpg"/>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator lime accent-2">Green Krack<a class="btn-floating btn-med waves-effect waves-light lime darken-4 right"><i class="material-icons">shopping_cart</i></a></span>
+        <p><a href="#">Learn more about this strain</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title lime accent-2">Green Krack Prices<i class="material-icons right">close</i></span>
+        <p>1/8: $60<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
+        <p>1/4: $100<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
+        <p>1/2: $180<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
+        <p>Oz: $320<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+$(document).ready(function() {
+  console.log('working');
+  $('li.tab a').click(function(){
+    //console.log(this)
+    $('li.tab a').removeClass('active')
+    $(this).addClass('active')
+    // $('#search').val('')
+  })
+  $('.dropdown-button').dropdown({
+    inDuration: 300,
+    outDuration: 225,
+    constrain_width: false, // Does not change width of dropdown to that of the activator
+    hover: true, // Activate on hover
+    gutter: 0, // Spacing from edge
+    belowOrigin: false, // Displays dropdown below the button
+    alignment: 'left' // Displays dropdown with edge aligned to the left of button
+  }
+);
+})
+</script>
+<!-- End Template for Products -->

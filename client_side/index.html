@@ -1,274 +1,338 @@
 <!DOCTYPE html>
 <html ng-app="kushTaxi">
+
 <head>
   <meta charset="utf-8">
   <title>Kush Taxi</title>
+  <!-- CSS STYLE SHEETS AND FONTS -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/animate.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/animate.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!--------------------------------->
+</head>
+
+<body ng-controller="signUp as su" class="grey darken-4  ">
+  <!--------------------------------->
+  <!-- top nav bar -->
+  <header class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper black">
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons mdi-navigation-menu">
+        </i></a>
+        <div class="input-field col s12 m4 left">
+          <input id="search" type="search">
+          <label for="search"><i class="material-icons ">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+        <ul class="right hide-on-med-and-down">
+          <li class="links">
+            <span class="left">Kush</span><a data-activates="slide-out" class="button-collapse show-on-large element-animation" id="car"><i class="fa fa-taxi "></i></a></li>
+
+          <!-- Modal Trigger 1 -->
+          <li class="links">
+            <a href="#modal1" class="waves-effect waves-light modal-trigger">Join</a>
+          </li>
+          <!-- End Modal Trigger 1 -->
+
+          <!-- Modal Trigger 2 -->
+          <li class="links">
+            <a href="#modal2" class="waves-effect waves-light modal-trigger">Login</a>
+          </li>
+          <!-- End Modal Trigger 2 -->
+
+          <li class="links"><a href="#/cart" class="waves-effect waves-light " id="cart"><i class="fa fa-cart-plus "></i></a></li>
+        </ul>
+
+      </div>
+    </nav>
+  </header>
+  <!-- End of top nav bar -->
+  <!--------------------------------->
+  <main>
+    <!-- Modal Structure 1 -->
+    <div id="modal1" class="modal">
+      <div class="modal-content lighten-5 z-depth-5">
+        <!-- SignUp Form-->
+        <div class="brown-text text darken-2">
+          <h5>Register</h5>
+          <form ng-submit="su.submit()">
+            <div class="input-field">
+              <input ng-model="su.patient.fname" id="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.lname" id="last_name" type="text" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.username" id="username" type="text" class="validate">
+              <label for="username">Username</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.email" id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.password" id="password" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+
+            <br>
+            <h5>Personal Information</h5>
+
+            <div class="input-field">
+              <input ng-model="su.patient.addone" id="address_one" type="text" class="validate">
+              <label for="address_one">Street Address 1</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.addtwo" id="address_two" type="text" class="validate">
+              <label for="address_two">Street Address 2</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.city" id="city" type="text" class="validate">
+              <label for="city">City</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.state" id="state" type="text" class="validate">
+              <label for="state">State</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.zip" id="zip" type="text" class="validate">
+              <label for="zip">Zip Code</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.phone" id="phone" type="text" class="validate">
+              <label for="phone">Phone Number</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.dob" id="dob" type="text" class="validate">
+              <label for="dob">Date of Birth</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.dl" id="dl" type="text" class="validate">
+              <label for="dl">Driver's License#</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.dname" id="d_name" type="text" class="validate">
+              <label for="d_name">Recommending Doctor's Name</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.dphone" id="doc_phone" type="text" class="validate">
+              <label for="doc_phone">Doctor's Number</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.dverify" id="d_verify" type="text" class="validate">
+              <label for="d_verify">Doctor's Verification Website </label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.pid" id="p_id" type="text" class="validate">
+              <label for="p_id">Patient ID#</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.recexp" id="rec_exp" type="text" class="validate">
+              <label for="rec_exp">Rec Expiration Date</label>
+            </div>
+            <div class="input-field">
+              <input ng-model="su.patient.refer" id="refer" type="text" class="validate">
+              <label for="refer">How did you hear about us?</label>
+            </div>
 
 
+
+            <br>
+            <h5>Upload Documents</h5>
+            <div class="file-field input-field">
+              <div class="btn-floating blue-black left">
+                <i class="fa fa-file-image-o"></i>
+                <input type="file" file-model="su.patient.idImg"/>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" id="photo" type="text" placeholder="Upload Photo ID">
+              </div>
+            </div>
+            <div class="file-field input-field">
+              <div class="btn-floating blue-black left">
+                <i class="fa fa-file-o"></i>
+                <input type="file" file-model="su.patient.recImg"/>
+              </div>
+              <div class="file-path-wrapper">
+                <input  class="file-path validate" id="rec" type="text" placeholder="Upload Recommendation">
+              </div>
+            </div>
+
+            <br>
+            <h5>Member Agreement</h5>
+            <h7>I declare under penalty of perjury that the information provided on this membership agreement is true and correct. I further declare under penalty of perjury that I am a medical cannabis patient and will not divert my medicine for non-medical
+              use or for use by a non-member. I further declare under penalty of perjury that I am not a member of law enforcement and will not divert any medicine for the purpose of any criminal investigations. I have read and understand the above requirements
+              and agree to follow these guidelines. I acknowledge that I have been offered the ability to review a copy of the Articles of Incorporation, Bylaws, and Membership Rules and Policies. Additionally, I hereby authorize the release of my medical
+              information concerning my diagnosis, condition or prognosis to the Collective and its authorized representatives for purposes of verifying the validity of my medical recommendation and the valid operation of the Collective pursuant to the
+              Compassionate Use Act and Medical Marijuana Program Act.</h7>
+            <div class="input-field">
+              <input ng-model="su.patient.agreement" id="agreement" type="text" class="validate">
+              <label for="agreement">Type "I agree" to continue</label>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="input-field col s1 offset-s11">
+              <button type="submit" class="btn modal-action modal-close waves-effect waves-light blue-black">Submit</button>
+            </div>
+          </form>
+
+
+
+
+        </div>
+        <!-- End of SignUp -->
+
+      </div>
+    </div>
+
+    <!-- End Modal Structure 1 -->
+
+    <!-- Modal Structure 2 -->
+    <div id="modal2" class="modal">
+      <div class="modal-content lighten-5 z-depth-5">
+
+        <!-- Patient Login Form -->
+        <div class="brown-text text darken-2">
+          <h5>Patient Portal</h5>
+          <form ng-submit="ln.submit()">
+            <div class="row">
+              <div class="input-field">
+                <i class="fa fa-envelope prefix"></i>
+                <input id="email_login" type="email" class="validate">
+                <label for="email_login">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field">
+                <i class="fa fa-key prefix"></i>
+                <input id="password_login" type="password" class="validate">
+                <label for="password_login">Password</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <button type="submit" class="btn-floating btn-large waves-effect waves-light blue-black right"><i class="material-icons">input</i></button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- End Patient Login Form -->
+
+    </div>
+
+    <!-- End Modal Structure 2 -->
+
+    <!-- end parallax -->
+    <!--------------------------------->
+    <!-- Pop Out Side Menu -->
+    <div class="row grey darken-4 z-depth-5">
+      <div class="container brown-text text darken-2">
+        <ul id="slide-out" class="side-nav">
+          <li><a href="#/products">Products</a></li>
+          <li><a href="#/locations">Service Area</a></li>
+          <li><a href="#/orders">Order History</a></li>
+          <li><a href="#/contact">Contact Us</a></li>
+          <li class="links">
+            <span class="left">Kush</span><a data-activates="slide-out" class="button-collapse show-on-large element-animation" id="car"><i class="fa fa-taxi "></i></a></li>
+
+          <!-- Modal Trigger 1 -->
+          <li class="links">
+            <a href="#modal1" class="waves-effect waves-light modal-trigger">Join</a>
+          </li>
+          <!-- End Modal Trigger 1 -->
+
+          <!-- Modal Trigger 2 -->
+          <li class="links">
+            <a href="#modal2" class="waves-effect waves-light modal-trigger">Login</a>
+          </li>
+          <!-- End Modal Trigger 2 -->
+
+          <li class="links"><a href="#/cart" class="waves-effect waves-light " id="cart"><i class="fa fa-cart-plus "></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End of Pop Out Side Menu  -->
+    <!--------------------------------->
+
+    <!-- UI router state change -->
+    <div ui-view></div>
+    <!-- End UI router state change -->
+  </main>
+  <!--------------------------------->
+  <!-- Footer  -->
+  <footer class="page-footer black z-depth-5">
+    <div class="container">
+      <div class="row ">
+        <div class="col s6">
+          <h5 class="lime-text accent-2">Hours & Info</h5>
+          <p class="lime-text accent-2">
+            Serving Venice, Santa Monica, Marina Del Rey
+            <br> Sun-Thurs: 2pm-Midnight, Fri-Sat: 2pm-1am
+            <br> 310.625.4424
+            <br> gethigh@kushtaxi.com
+          </p>
+        </div>
+        <div class="col s6 footer-copyright black">
+          <div class="container">
+            <button class="btn waves-effect waves-light right brown darken-2" type="submit" href="#/contact">Contact Us
+              <i class="material-icons right">send</i>
+            </button>
+            <!-- <a class="grey-text text-lighten-4 right" href="#/contact">Contact Us</a> -->
+          </div>
+          © 2016 E.T. Productions
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <!-- End of Footer -->
+  <!--------------------------------->
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-animate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
   <script src="app.js"></script>
   <script src="app.routes.js"></script>
   <script src="js/factory.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/angular-materialize.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $(".button-collapse").sideNav({
+        menuWidth: 300,
+        edge: 'left',
+        closeOnClick: true
+      });
+
+      $('.modal-trigger').leanModal({
+        dismissible: true, // Modal can be dismissed by clicking outside of the modal
+        opacity: .5, // Opacity of modal background
+        in_duration: 300, // Transition in duration
+        out_duration: 200, // Transition out duration
+        ready: function() {
+          // alert('Ready');
+        }, // Callback for Modal open
+        complete: function() {
+            // alert('Closed');
+          } // Callback for Modal close
+      });
+
+
+    });
+  </script>
   <!-- End of Scripts -->
-
-</head>
-
-<body ng-controller="signUp as su" class="container orange lighten-5">
-
-  {{ 5 + 5 }}
-
-  <!-- top nav bar -->
-  <div class="row">
-    <nav>
-      <div class="nav-wrapper lime darken-4">
-        <a class="brand-logo animated fadeInRight center-align">Kush Taxi</a>
-        <ul class="right hide-on-med-and-down">
-          <li class="links"><span class="left">Menu</span><a data-activates="slide-out" class="button-collapse show-on-large element-animation" id="car" ><i class="fa fa-taxi "></i></a></li>
-          <li class="links"><a class="waves-effect waves-light ">Join</a></li>
-          <li class="links"><a class="waves-effect waves-light ">Patient Login</a></li>
-          <li class="links"><a class="waves-effect waves-light " id="cart"><i class="fa fa-cart-plus "></i></a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-
-  <!-- End of top nav bar -->
-
-
-
-  <!-- Page Layout here -->
-  <div class="row orange lighten-5 z-depth-5">
-    <div class="container">
-      <form ng-submit="su.submit()">
-        <div class="row">
-          <div class="input-field col s6">
-            <input ng-model="su.patient.fname" id="first_name" type="text" class="validate">
-            <label for="first_name">First Name</label>
-          </div>
-          <div class="input-field col s6">
-            <input ng-model="su.patient.lname" id="last_name" type="text" class="validate">
-            <label for="last_name">Last Name</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <input ng-model="su.patient.email" id="email" type="email" class="validate">
-            <label for="email">Email</label>
-          </div>
-          <div class="input-field col s6">
-            <input ng-model="su.patient.password" id="password" type="password" class="validate">
-            <label for="password">Password</label>
-          </div>
-        </div>
-
-
-
-        <div class="row">
-          <div class="file-field input-field col s6">
-            <div class="btn-floating lime darken-4 left">
-              <i class="fa fa-file-image-o"></i>
-              <input ng-model="su.patient.idImg" type="file"/>
-            </div>
-          <div class="file-path-wrapper col s6">
-            <input class="file-path validate"  id="photo" type="text" placeholder="Upload Photo ID">
-          </div>
-        </div>
-        <div class="file-field input-field col s6">
-          <div class="btn-floating lime darken-4 left">
-            <i class="fa fa-file-o"></i>
-            <input type="file"/>
-          </div>
-          <div class="file-path-wrapper col s6">
-            <input ng-model="su.patient.recImg" class="file-path validate"  id="rec" type="text" placeholder="Upload Recommendation">
-          </div>
-        </div>
-        <div class="input-field col s1 offset-s11">
-          <button type="submit" class="btn waves-effect waves-light lime darken-4">Submit</button>
-        </div>
-      </div>
-    </form>
-  </div>
-  </div>
-<!-- End of Page Layout -->
-
-<!-- Patient Login Form -->
-<div class="row orange lighten-5 z-depth-5">
-  <div class="container">
-    <form class="">
-      <div class="row">
-        <div class="input-field col s5">
-          <div class="file-path-wrapper col s6">
-            <i class="fa fa-envelope prefix"></i>
-            <input id="email_login" type="email" class="validate">
-            <label for="email_login">Email</label>
-          </div>
-        </div>
-        <div class="input-field col s5">
-          <div class="file-path-wrapper col s6">
-            <i class="fa fa-key prefix"></i>
-            <input id="password_login" type="password" class="validate">
-            <label for="password_login">Password</label>
-          </div>
-        </div>
-        <div class="input-field col s1">
-          <a class="btn-floating btn-med waves-effect waves-light lime darken-4 right"><i class="material-icons">input</i></a>
-        </div>
-      </div>
-    </form>
-    </div>
-  </div>
-<!-- End Patient Login Form -->
-
-
-
-
-<!-- Template for Products -->
-  <div class="row">
-
-    <div class="col s3 orange lighten-5 z-depth-5">
-      <div class="card small hoverable orange lighten-5">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator scalable" src="Ultra-violet-sativa.jpg"/>
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Ultra Violet<a class="btn-floating btn-med waves-effect waves-light lime darken-4 right"><i class="material-icons">shopping_cart</i></a></span>
-          <p><a href="#">Learn more about this strain</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Ultra Violet Prices<i class="material-icons right">close</i></span>
-            <p>1/8: $60<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
-            <p>1/4: $100<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
-            <p>1/2: $180<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
-            <p>Oz: $320<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
-        </div>
-      </div>
-    </div>
-
-  <div class="col s3 orange lighten-5 z-depth-5">
-    <div class="card small hoverable orange lighten-5">
-      <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator scalable" src="green-krack-sativa.jpg"/>
-      </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">Green Krack<a class="btn-floating btn-med waves-effect waves-light lime darken-4 right"><i class="material-icons">shopping_cart</i></a></span>
-        <p><a href="#">Learn more about this strain</a></p>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Green Krack Prices<i class="material-icons right">close</i></span>
-        <p>1/8: $60<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
-        <p>1/4: $100<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
-        <p>1/2: $180<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
-        <p>Oz: $320<a class="btn-floating btn-med waves-effect waves-light red right"><i class="material-icons">add</i></a></p>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- End Template for Products -->
-
-
-
-<!-- Pop Out Side Menu -->
-<div class="row">
-  <ul id="slide-out" class="side-nav">
-    <li><a href="#!">Flowers</a></li>
-    <li><a href="#!">Concentrates</a></li>
-    <li><a href="#!">Edibles</a></li>
-    <li><a href="#!">Clones</a></li>
-    <li><a href="#!">Service Area</a></li>
-  </ul>
-</div>
-<!-- End of Pop Out Side Menu  -->
-
-
-<!-- Past Orders Table -->
-<div class="row" ng-controller="patients as ps">
-    <ul class="collapsible" data-collapsible="accordion" watch>
-        <li ng-repeat="order in ps.orders">
-            <div class="collapsible-header">ID: {{ order.id }} -- Total:{{order.total }} -- Date: {{order.date }}</div>
-            <div class="collapsible-body"><ul><li ng-repeat="item in order.items"><span> Name: {{ item.name }} </span> --- <span> Qty: {{ item. qty }}</span> --- Price: {{ item.price }} </li></ul></div>
-        </li>
-    </ul>
-</div>
-<!-- End of Past Orders Table -->
-
-
-<div class="row orange lighten-5 z-depth-5">
-      <table class="bordered responsive-table highlighted">
-        <thead>
-          <tr>
-              <th data-field="id">OrderId</th>
-              <th data-field="date">Order Date</th>
-              <th data-field="name">Quantity</th>
-              <th data-field="price">Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Guerrilla OG</td>
-            <td>10/22/2015</td>
-            <td>Eighth</td>
-            <td>$60</td>
-          </tr>
-          <tr>
-            <td>Herojuana</td>
-            <td>10/25/2015</td>
-            <td>Quad</td>
-            <td>$100</td>
-          </tr>
-          <tr class="grey lighten-2">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>$160</td>
-          </tr>
-        </tbody>
-      </table>
-</div>
-
-
-
-
-<script type="text/javascript">
-$(document).ready(function(){
-
-  $(".button-collapse").sideNav();
-})
-</script>
+  <!--------------------------------->
 </body>
-
-<!-- Footer  -->
-<div class="orange lighten-5 z-depth-5">
-  <footer class="page-footer lime-darken-4">
-          <div class="container">
-            <div class="row">
-              <div class="col s6 offset-s6">
-                <h5 class="white-text">Hours & Info</h5>
-                <p class="grey-text text-lighten-4">Serving Venice, Santa Monica, Marina Del Rey<br>Sun-Thurs: 2pm-Midnight, Fri-Sat: 2pm-1am<br>310.625.4424<br>gethigh@kushtaxi.com
-                </p>
-              </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2016 ET Productions
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-          </div>
-        </div>
-        </footer>
-        </div>
-<!-- End of Footer -->
 
 </html>
