@@ -1,6 +1,7 @@
 /*========FLEX BOX SETUP=========*/
 *{
   border-radius: 2px;
+  color: #eeff41;
 }
 body {
   display: flex;
@@ -10,6 +11,9 @@ body {
 
 main {
   flex: 1 0 auto;
+}
+header{
+  opacity: 0.5;
 }
 /*======CART*/
 .cart{
