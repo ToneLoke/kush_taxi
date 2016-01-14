@@ -1,32 +1,45 @@
-<table class="responsive-table highlight">
-       <thead>
-         <tr>
-             <th data-field="name">Strain</th>
-             <th data-field="qty">Qty</th>
-             <th data-field="price">Price</th>
-         </tr>
-       </thead>
+<div class="cart black">
+  <table class="table highlight bordered row">
+    <thead class="col s12">
+      <tr class="row valign-wrapper lime-text accent-2">
+        <th class="col s2"></th>
+        <th class="col s4" data-field="product">Product</th>
+        <th class="col s2" data-field="price">Price</th>
+        <th class="col s2" data-field="qty">Qty</th>
+        <th class="col s1" data-field="total">Total</th>
+        <th class="col s1" data-field="remove">Remove</th>
+      </tr>
+    </thead>
+    <tbody class="col s12">
+      <tr class="row">
+        <td class="col s2 valign-wrapper">
+          <div class="">
+            <img src="images/Flowers.jpg" alt="Flowerz" class="circle responsive-img">
+          </div>
+        </td>
+        <td class="col s4 lime-text accent-2"><br>Green Crack<br>Weight: 3.5g</td>
+        <td class="col s2 lime-text accent-2"><br>$60</td>
+        <td class="col s2 inQ "><input type="number" name="quantity" value="1"></td>
+        <td class="col s1 lime-text accent-2"><br>$60</td>
+        <td class="col s1"><br><i class="fa fa-times lime-text accent-2 small" href="#/cart"></i></td>
+      </tr>
+      <tr class="row valign-wrapper">
+        <td class="col s8"></td>
+        <td class="col s2 lime-text accent-2">Cart Total:</td>
+        <td class="col s2 lime-text accent-2">$120</td>
+      </tr>
 
-       <tbody>
-         <tr>
-           <td>Green Krack</td>
-           <td>1/8</td>
-           <td>$60</td>
-         </tr>
-         <tr>
-           <td>Blue Dream</td>
-           <td>1/4</td>
-           <td>$100</td>
-         </tr>
-         <tr>
-           <td>Ice Hash Cone</td>
-           <td>1</td>
-           <td>$0</td>
-         </tr>
-         <tr>
-           <td></td>
-           <td>Total:</td>
-           <td>$200</td>
-         </tr>
-       </tbody>
-</table>
+    </tbody>
+    <tfoot class="col s12">
+      <tr class="row valign-wrapper">
+
+      <td class="col m2 offset-m2 s6">
+        <a class="btn-large lime accent-2 black-text" type="button" name="update">Update</a>
+      </td>
+      <td class="col m2 offset-m4 s6">
+        <a class="btn-large lime accent-2 black-text" type="button" name="checkout">Checkout</a>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+</div>

@@ -1,4 +1,7 @@
 /*========FLEX BOX SETUP=========*/
+*{
+  border-radius: 2px;
+}
 body {
   display: flex;
   min-height: 100vh;
@@ -8,7 +11,29 @@ body {
 main {
   flex: 1 0 auto;
 }
+/*======CART*/
+.cart{
+  border: 3px #eeff41 solid;
+  border-radius: 15px;
+  padding: 15px;
+}
+.row{
+  padding: 5px;
+}
+.products{
+  margin: auto 10px;
+}
+table{
+  color: #827717;
+}
+input[type="number"] {
+    width: 25px;
+    border: 1px #827717 solid;
+    border-radius: 15px;
+    padding: 5px;
+}
 
+/*=====*/
 /*====================*/
 /*------img size for parallax------*/
 #pImg{

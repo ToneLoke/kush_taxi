@@ -14,14 +14,20 @@
   <!--------------------------------->
 </head>
 
-<body ng-controller="signUp as su" class="orange lighten-5">
+<body ng-controller="signUp as su" class="grey darken-4  ">
   <!--------------------------------->
   <!-- top nav bar -->
   <header class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper lime darken-4">
-        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right ">
+      <div class="nav-wrapper black">
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons mdi-navigation-menu">
+        </i></a>
+        <div class="input-field col s12 m4 left">
+          <input id="search" type="search">
+          <label for="search"><i class="material-icons ">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+        <ul class="right hide-on-med-and-down">
           <li class="links">
             <span class="left">Kush</span><a data-activates="slide-out" class="button-collapse show-on-large element-animation" id="car"><i class="fa fa-taxi "></i></a></li>
 
@@ -139,7 +145,7 @@
             <br>
             <h5>Upload Documents</h5>
             <div class="file-field input-field">
-              <div class="btn-floating lime darken-4 left">
+              <div class="btn-floating blue-black left">
                 <i class="fa fa-file-image-o"></i>
                 <input type="file" file-model="su.patient.idImg"/>
               </div>
@@ -148,7 +154,7 @@
               </div>
             </div>
             <div class="file-field input-field">
-              <div class="btn-floating lime darken-4 left">
+              <div class="btn-floating blue-black left">
                 <i class="fa fa-file-o"></i>
                 <input type="file" file-model="su.patient.recImg"/>
               </div>
@@ -171,7 +177,7 @@
 
             <!-- Submit Button -->
             <div class="input-field col s1 offset-s11">
-              <button type="submit" class="btn modal-action modal-close waves-effect waves-light lime darken-4">Submit</button>
+              <button type="submit" class="btn modal-action modal-close waves-effect waves-light blue-black">Submit</button>
             </div>
           </form>
 
@@ -210,7 +216,7 @@
             </div>
             <div class="row">
               <div class="input-field col s6">
-                <button type="submit" class="btn-floating btn-large waves-effect waves-light lime darken-4 right"><i class="material-icons">input</i></button>
+                <button type="submit" class="btn-floating btn-large waves-effect waves-light blue-black right"><i class="material-icons">input</i></button>
               </div>
 
             </div>
@@ -226,13 +232,29 @@
     <!-- end parallax -->
     <!--------------------------------->
     <!-- Pop Out Side Menu -->
-    <div class="row orange lighten-5 z-depth-5">
+    <div class="row grey darken-4 z-depth-5">
       <div class="container brown-text text darken-2">
         <ul id="slide-out" class="side-nav">
           <li><a href="#/products">Products</a></li>
           <li><a href="#/locations">Service Area</a></li>
           <li><a href="#/orders">Order History</a></li>
           <li><a href="#/contact">Contact Us</a></li>
+          <li class="links">
+            <span class="left">Kush</span><a data-activates="slide-out" class="button-collapse show-on-large element-animation" id="car"><i class="fa fa-taxi "></i></a></li>
+
+          <!-- Modal Trigger 1 -->
+          <li class="links">
+            <a href="#modal1" class="waves-effect waves-light modal-trigger">Join</a>
+          </li>
+          <!-- End Modal Trigger 1 -->
+
+          <!-- Modal Trigger 2 -->
+          <li class="links">
+            <a href="#modal2" class="waves-effect waves-light modal-trigger">Login</a>
+          </li>
+          <!-- End Modal Trigger 2 -->
+
+          <li class="links"><a href="#/cart" class="waves-effect waves-light " id="cart"><i class="fa fa-cart-plus "></i></a></li>
         </ul>
       </div>
     </div>
@@ -245,25 +267,29 @@
   </main>
   <!--------------------------------->
   <!-- Footer  -->
-  <footer class="page-footer lime darken-4 z-depth-5">
+  <footer class="page-footer black z-depth-5">
     <div class="container">
       <div class="row ">
-        <div class="col s12">
-          <h5 class="white-text">Hours & Info</h5>
-          <p class="grey-text text-lighten-4">
+        <div class="col s6">
+          <h5 class="lime-text accent-2">Hours & Info</h5>
+          <p class="lime-text accent-2">
             Serving Venice, Santa Monica, Marina Del Rey
             <br> Sun-Thurs: 2pm-Midnight, Fri-Sat: 2pm-1am
             <br> 310.625.4424
             <br> gethigh@kushtaxi.com
           </p>
         </div>
-      </div>
-      <div class="footer-copyright lime darken-4">
-        <div class="container">
+        <div class="col s6 footer-copyright black">
+          <div class="container">
+            <button class="btn waves-effect waves-light right brown darken-2" type="submit" href="#/contact">Contact Us
+              <i class="material-icons right">send</i>
+            </button>
+            <!-- <a class="grey-text text-lighten-4 right" href="#/contact">Contact Us</a> -->
+          </div>
           © 2016 E.T. Productions
-          <a class="grey-text text-lighten-4 right" href="#/contact">Contact Us</a>
         </div>
       </div>
+
     </div>
   </footer>
   <!-- End of Footer -->
