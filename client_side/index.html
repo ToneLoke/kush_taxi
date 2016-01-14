@@ -14,36 +14,36 @@
   <!--------------------------------->
 </head>
 
-<body ng-controller="signUp as su" class="grey darken-4  ">
+<body ng-controller="signUp as su" class="grey darken-4 lime-text text-accent-2">
   <!--------------------------------->
   <!-- top nav bar -->
   <header class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper black">
+      <div class="nav-wrapper black lime-text accent-2">
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons mdi-navigation-menu">
         </i></a>
         <div class="input-field col s12 m4 left">
           <input id="search" type="search">
-          <label for="search"><i class="material-icons ">search</i></label>
-          <i class="material-icons">close</i>
+          <label for="search"><i class="material-icons lime-text text-accent-2">search</i></label>
+          <i class="material-icons lime-text text-accent-2">close</i>
         </div>
-        <ul class="right hide-on-med-and-down">
+        <ul class="right hide-on-s-and-down">
           <li class="links">
-            <span class="left">Kush</span><a data-activates="slide-out" class="button-collapse show-on-large element-animation" id="car"><i class="fa fa-taxi "></i></a></li>
+            <span class="left">Kush</span><a data-activates="slide-out" class="button-collapse show-on-large element-animation lime-text accent-2" id="car"><i class="fa fa-taxi "></i></a></li>
 
           <!-- Modal Trigger 1 -->
           <li class="links">
-            <a href="#modal1" class="waves-effect waves-light modal-trigger">Join</a>
+            <a href="#modal1" class="waves-effect waves-light modal-trigger lime-text accent-2">Join</a>
           </li>
           <!-- End Modal Trigger 1 -->
 
           <!-- Modal Trigger 2 -->
           <li class="links">
-            <a href="#modal2" class="waves-effect waves-light modal-trigger">Login</a>
+            <a href="#modal2" class="waves-effect waves-light modal-trigger lime-text accent-2">Login</a>
           </li>
           <!-- End Modal Trigger 2 -->
 
-          <li class="links"><a href="#/cart" class="waves-effect waves-light " id="cart"><i class="fa fa-cart-plus "></i></a></li>
+          <li class="links"><a href="#/cart" class="waves-effect waves-light lime-text accent-2" id="cart"><i class="fa fa-cart-plus "></i></a></li>
         </ul>
 
       </div>
@@ -53,10 +53,10 @@
   <!--------------------------------->
   <main>
     <!-- Modal Structure 1 -->
-    <div id="modal1" class="modal">
+    <div id="modal1" class="modal grey darken-4">
       <div class="modal-content lighten-5 z-depth-5">
         <!-- SignUp Form-->
-        <div class="brown-text text darken-2">
+        <div class="white-text">
           <h5>Register</h5>
           <form ng-submit="su.submit()">
             <div class="input-field">
@@ -145,8 +145,8 @@
             <br>
             <h5>Upload Documents</h5>
             <div class="file-field input-field">
-              <div class="btn-floating blue-black left">
-                <i class="fa fa-file-image-o"></i>
+              <div class="btn-floating left">
+                <i class="fa fa-file-image-o lime accent-2 grey-text text-darken-4"></i>
                 <input type="file" file-model="su.patient.idImg"/>
               </div>
               <div class="file-path-wrapper">
@@ -154,18 +154,18 @@
               </div>
             </div>
             <div class="file-field input-field">
-              <div class="btn-floating blue-black left">
-                <i class="fa fa-file-o"></i>
+              <div class="btn-floating left">
+                <i class="fa fa-file-o lime accent-2 grey-text text-darken-4"></i>
                 <input type="file" file-model="su.patient.recImg"/>
               </div>
               <div class="file-path-wrapper">
-                <input  class="file-path validate" id="rec" type="text" placeholder="Upload Recommendation">
+                <input class="file-path validate" id="rec" type="text" placeholder="Upload Recommendation">
               </div>
             </div>
 
             <br>
             <h5>Member Agreement</h5>
-            <h7>I declare under penalty of perjury that the information provided on this membership agreement is true and correct. I further declare under penalty of perjury that I am a medical cannabis patient and will not divert my medicine for non-medical
+            <h7 class="grey-text">I declare under penalty of perjury that the information provided on this membership agreement is true and correct. I further declare under penalty of perjury that I am a medical cannabis patient and will not divert my medicine for non-medical
               use or for use by a non-member. I further declare under penalty of perjury that I am not a member of law enforcement and will not divert any medicine for the purpose of any criminal investigations. I have read and understand the above requirements
               and agree to follow these guidelines. I acknowledge that I have been offered the ability to review a copy of the Articles of Incorporation, Bylaws, and Membership Rules and Policies. Additionally, I hereby authorize the release of my medical
               information concerning my diagnosis, condition or prognosis to the Collective and its authorized representatives for purposes of verifying the validity of my medical recommendation and the valid operation of the Collective pursuant to the
@@ -177,7 +177,7 @@
 
             <!-- Submit Button -->
             <div class="input-field col s1 offset-s11">
-              <button type="submit" class="btn modal-action modal-close waves-effect waves-light blue-black">Submit</button>
+              <button type="submit" class="btn modal-action modal-close waves-effect waves-light blue-black lime accent-2 grey-text text-darken-4">Submit</button>
             </div>
           </form>
 
@@ -193,69 +193,56 @@
     <!-- End Modal Structure 1 -->
 
     <!-- Modal Structure 2 -->
-    <div id="modal2" class="modal">
+    <div id="modal2" class="modal grey darken-4">
       <div class="modal-content lighten-5 z-depth-5">
 
         <!-- Patient Login Form -->
-        <div class="brown-text text darken-2">
+        <div class="white-text text darken-2">
           <h5>Patient Portal</h5>
           <form ng-submit="ln.submit()">
             <div class="row">
+              <button class="btn-floating btn-large waves-effect waves-light lime accent-2"><i class="material-icons grey-text text-darken-4">email</i></button>
               <div class="input-field">
-                <i class="fa fa-envelope prefix"></i>
+                <!-- <i class="fa fa-envelope prefix lime accent-2"></i> -->
                 <input id="email_login" type="email" class="validate">
                 <label for="email_login">Email</label>
               </div>
             </div>
             <div class="row">
+              <button class="btn-floating btn-large waves-effect waves-light lime accent-2"><i class="material-icons grey-text text-darken-4">vpn_key</i></button>
               <div class="input-field">
-                <i class="fa fa-key prefix"></i>
+                <!-- <i class="fa fa-key prefix lime accent-2"></i> -->
+
                 <input id="password_login" type="password" class="validate">
                 <label for="password_login">Password</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s6">
-                <button type="submit" class="btn-floating btn-large waves-effect waves-light blue-black right"><i class="material-icons">input</i></button>
+                <button type="submit" class="btn-floating btn-large waves-effect waves-light lime accent-2 right"><i class="material-icons grey-text text-darken-4">input</i></button>
               </div>
 
             </div>
           </form>
         </div>
       </div>
+    </div>
       <!-- End Patient Login Form -->
 
-    </div>
 
     <!-- End Modal Structure 2 -->
 
     <!-- end parallax -->
     <!--------------------------------->
     <!-- Pop Out Side Menu -->
-    <div class="row grey darken-4 z-depth-5">
-      <div class="container brown-text text darken-2">
-        <ul id="slide-out" class="side-nav">
-          <li><a href="#/products">Products</a></li>
-          <li><a href="#/locations">Service Area</a></li>
-          <li><a href="#/orders">Order History</a></li>
-          <li><a href="#/contact">Contact Us</a></li>
-          <li class="links">
-            <span class="left">Kush</span><a data-activates="slide-out" class="button-collapse show-on-large element-animation" id="car"><i class="fa fa-taxi "></i></a></li>
+    <div class="row z-depth-5 ">
+      <div class="container">
+        <ul id="slide-out" class="side-nav grey darken-4">
+          <li><a class="lime-text text-accent-2" href="#/products">Products</a></li>
+          <li><a class="lime-text text-accent-2" href="#/locations">Service Area</a></li>
+          <li><a class="lime-text text-accent-2" href="#/orders">Order History</a></li>
+          <li><a class="lime-text text-accent-2" href="#/contact">Contact Us</a></li>
 
-          <!-- Modal Trigger 1 -->
-          <li class="links">
-            <a href="#modal1" class="waves-effect waves-light modal-trigger">Join</a>
-          </li>
-          <!-- End Modal Trigger 1 -->
-
-          <!-- Modal Trigger 2 -->
-          <li class="links">
-            <a href="#modal2" class="waves-effect waves-light modal-trigger">Login</a>
-          </li>
-          <!-- End Modal Trigger 2 -->
-
-          <li class="links"><a href="#/cart" class="waves-effect waves-light " id="cart"><i class="fa fa-cart-plus "></i></a></li>
-        </ul>
       </div>
     </div>
     <!-- End of Pop Out Side Menu  -->
@@ -281,7 +268,7 @@
         </div>
         <div class="col s6 footer-copyright black">
           <div class="container">
-            <button class="btn waves-effect waves-light right brown darken-2" type="submit" href="#/contact">Contact Us
+            <button class="btn waves-effect waves-light right lime accent-2 grey-text text-darken-4" type="submit" href="#/contact">Contact Form
               <i class="material-icons right">send</i>
             </button>
             <!-- <a class="grey-text text-lighten-4 right" href="#/contact">Contact Us</a> -->
