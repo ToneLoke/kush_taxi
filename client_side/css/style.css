@@ -32,6 +32,8 @@ header{
 }
 table{
   color: #827717;
+  background-image: url('/images/background_img.jpg');
+  background-position: center;
 }
 input[type="number"] {
     width: 25px;
@@ -40,6 +42,23 @@ input[type="number"] {
     padding: 5px;
 }
 
+h1.header{
+  font-family: 'Lobster', cursive;
+  font-size: 250px;
+  font-stretch: extra-expanded;
+  color: #412300;
+  text-shadow: 5px 5px #efcf02;
+  padding-left: 290px;
+  position:absolute;
+}
+
+p.tag-line{
+  font-size: 25px;
+  color: #412300;
+  position: relative;
+  left: -90px;
+  right: 100px;
+}
 /*=====*/
 /*====================*/
 /*------img size for parallax------*/
