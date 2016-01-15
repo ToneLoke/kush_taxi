@@ -1,13 +1,13 @@
 (function () {
-  angular.module('appRoutes', ['ui.router','controllers'])
+angular.module('appRoutes', ['ui.router', 'controllers'])
     .config(function ($stateProvider, $urlRouterProvider) {
       $urlRouterProvider.otherwise('/')
 
       $stateProvider
         .state('home', {
           url: '/',
-          templateUrl: '/partials/home.html'
-        // controllerAs: 'locations as lc'
+          templateUrl: '/partials/home.html',
+          controller: 'patients as p'
         })
         // SIGNUP STATES ========================================
         .state('signUp', {
@@ -26,46 +26,29 @@
         // CART STATES ==========================
         .state('cart', {
           url: '/cart',
-          templateUrl: '/partials/cart.html'
-        // controllerAs: 'cart as ct'
+          templateUrl: '/partials/cart.html',
+          controller: 'orders as or'
         })
 
         // PRODUCT STATES =======================
         .state('products', {
           url: '/products',
           templateUrl: '/partials/products.html',
-          controller: 'productsController as pr'
-        })
-
-        // ORDERS STATES ======================
-        .state('orders', {
-          url: '/orders',
-          templateUrl: '/partials/orders.html',
-          controller: 'orders as os'
+          controller: 'products as pr'
         })
 
         // CONTACT STATES ======================
-
         .state('contact', {
           url: '/contact',
           templateUrl: '/partials/contact.html'
         // controllerAs: 'contact as co'
         })
 
-        // LOCATIONS STATES ======================
-
-        .state('locations', {
-          url: '/locations',
-          templateUrl: '/partials/locations.html'
-        // controllerAs: 'locations as lc'
-        })
-
         // USERS STATES =================
-
         .state('patients', {
           url: '/patients',
-          templateUrl: 'partials/patients.html'
-        // controllerAs: 'patients as ps'
+          templateUrl: 'partials/patients.html',
+          controller: 'patients as p'
         })
     })
 }())

@@ -1,93 +1,104 @@
 ;(function () {
   angular.module('controllers', [])
-    .controller('patients', patients)
-    .controller('signUp', signUp)
-    .controller('logIn', logIn)
-    .controller('productsController', productsController)
-
-  signUp.$inject = ['$http', 'fileUpload']
-
-  function productsController (leafly, strainFactory) {
+  .controller('patients', patients)
+  .controller('signUp', signUp)
+  .controller('logIn', logIn)
+  .controller('products', products)
+  // ======================================
+  // depencies injection
+  // ======================================
+  signUp.$inject = ['fileUpload']
+  // ======================================
+  // Products controller
+  // ======================================
+  function products (leafly, strainFactory) {
     console.log('productsController+++++++++++++++')
     var ctrlP = this
     ctrlP.strains = []
-    leafly.allStrains()
-      .then(function (response) {
-        console.log('From Leafly=========', response.data.Strains)
-        ctrlP.strains = response.data.Strains
-        ctrlP.strains.forEach(function (index, strain) {
-          strainFactory.createStrain(strain)
-            .then(function (res) {
-              console.log(res)
-            })
-        })
-      }, function (response) {
-        console.log(response)
-      })
+    strainFactory.allStrains()
+    .then(function (strains) {
+      console.log('strains from db:', strains)
+      ctrlP.strains = strains.data
+    })
+    // leafly.allStrains()
+    //   .then(function (response) {
+    //     console.log('From Leafly=========', response.data.Strains)
+    //     ctrlP.strains = response.data.Strains
+    //     ctrlP.strains.forEach(function (strain, index) {
+    //       console.log("Strain==========", strain)
+    //       leafly.strainPhotos(strain.UrlName)
+    //       .then(function(resp){
+    //         strain.photos = resp.photos
+    //         strainFactory.createStrain(strain)
+    //         .then(function (res) {
+    //           console.log(res)
+    //         })
+    //       })
+    //     })
+    //   }, function (response) {
+    //     console.log(response)
+    //   })
   }
-  function patients () {
+  // ======================================
+  // Patients controller
+  // ======================================
+  function patients (Auth) {
     var patient = this
-    patient.orders = [{
-      id: 1,
-      date: '12/25/2015',
-      total: 500,
-      items: [{
-        name: 'green krack',
-        price: 60,
-        qty: 1
-      }, {
-        name: 'purple haze',
-        price: 120,
-        qty: 2
-      }, {
-        name: 'space queen',
-        price: 110,
-        qty: 2
-      }]
-    }, {
-      id: 2,
-      date: '12/25/2015',
-      total: 500,
-      items: [{
-        name: 'green krack',
-        price: 60,
-        qty: 1
-      }, {
-        name: 'purple haze',
-        price: 120,
-        qty: 2
-      }, {
-        name: 'space queen',
-        price: 110,
-        qty: 2
-      }]
-    }]
-  }
+    patient.orders = []
+    // get info if a person is logged in
+    patient.loggedIn = Auth.isLoggedIn()
+    // check to see if a user is logged in on every request
+    $rootScope.$on('$routeChangeStart', function() {
+      patient.loggedIn = Auth.isLoggedIn()
 
-  function signUp ($http, fileUpload) {
+      // get user information on page load
+      Auth.getUser()
+      .then(function(data) {
+        patient.user = data.data;
+      })
+    })
+
+    // function to handle logging out
+    patient.doLogout = function() {
+      Auth.logout()
+      patient.user = ''
+
+      $location.path('/home')
+    }
+  }
+  // ======================================
+  // Sign up controller
+  // ======================================
+  function signUp (fileUpload) {
     var signUp = this
     signUp.pics = []
     signUp.submit = function () {
       console.log('======== adding new patient ============')
-      // $http.post('http://10.200.8.177:3000/api/patients', signUp.patient)
-      //   .then( function(res){
-      //       console.log(res)
-      //   })
       signUp.pics.push(signUp.patient.recImg)
       signUp.pics.push(signUp.patient.idImg)
       console.log('=====patient===', signUp.patient)
       fileUpload.uploadFileToUrl(signUp.pics, signUp.patient, 'http://localhost:3000/api/patients')
     }
   }
-
-  function logIn ($http) {
+  // ======================================
+  // Log In controller
+  // ======================================
+  function logIn ($rootScope, $location, Auth) {
     var logIn = this
     logIn.submit = function () {
-      console.log('===== log in successful ========')
-      $http.get('http://10.200.8.177:3000/api/patients', logIn.patient)
-        .then(function (res) {
-          console.log(res)
-        })
+      logIn.processing = true
+      logIn.error = ''
+      console.log('===== log in attempt ========')
+      Auth.login(logIn.email,logIn.password)
+      .then(function (data) {
+        logIn.processing = false
+        console.log(data)
+        if(data.success)
+        $location.path('/products')
+        else {
+          logIn.error = data.message
+        }
+      })
     }
   }
 }())

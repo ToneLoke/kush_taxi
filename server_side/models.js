@@ -1,25 +1,33 @@
-var
-  bcrypt = require('bcrypt'),
+var bcrypt = require('bcrypt'),
   mongoose = require('mongoose'),
   Schema = mongoose.Schema,
   twilioClient = require('./twilioClient'),
 
   // =====Item Model===== //
   itemSchema = new Schema({
-    name: String,
-    img: {
-      data: Buffer,
-      contentType: String
-    },
-    type: String,
-    thc: Number,
+    UrlName: String,
+    Name: String,
+    Category: String,
+    Symbol: String,
+    RatingCount: Number,
+    ReviewCount: Number,
+    Rating: Number,
+    StarImage: String,
+    Tags: [{ Id: String, Category: Number, Name: String, Active: Boolean, DisplayLabel: String}],
+    NegativeEffects: [{ Id: String, Category: Number, Name: String, Active: Boolean, DisplayLabel: String}],
+    Flavors: [{ Id: String, Category: Number, Name: String, Active: Boolean, DisplayLabel: String}],
+    Symptoms: [{ Id: String, Category: Number, Name: String, Active: Boolean, DisplayLabel: String}],
+    Conditions: [{ Id: String, Category: Number, Name: String, Active: Boolean, DisplayLabel: String}],
+    permalink: String,
+    SortName: String,
+    LogTags: [String],
     pricing: {
-      gram: Number,
-      eigth: Number,
-      quad: Number,
-      half: Number
+      gram: { type: Number, default: 20 },
+      eighth: { type: Number, default: 60 },
+      quad: { type: Number, default: 100 },
+      half: { type: Number, default: 120 }
     },
-    treats: [String]
+    photos: [{ thumb: String, fullSize: String}]
   }),
   // ====================== //
   // =====Order Model===== //
@@ -61,8 +69,8 @@ var
     }
 
   })
-  // ====================== //
-  // =====Patient Methods===== //
+// ====================== //
+// =====Patient Methods===== //
 patientSchema.pre('save', function (next) {
   // 'this' refers to the user being saved
   console.log('++++++Patient Model pre-save Running+++++++', this)

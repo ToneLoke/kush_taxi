@@ -1,5 +1,4 @@
-var
-  db = require('./models'),
+var db = require('./models'),
   fs = require('fs')
 
 module.exports = {
@@ -10,7 +9,7 @@ module.exports = {
     // All product data
     all: function (req, res) {
       console.log('======All Product Data Request++++++++')
-      db.Product.find({}, function (err, products) {
+      db.Item.find({}, function (err, products) {
         if (err) res.json({error: err, message: 'Error', success: false})
         res.json(products)
       })
@@ -18,15 +17,15 @@ module.exports = {
     // Show a single product data
     data: function (req, res) {
       console.log('======Single product data request++++++++')
-      db.Product.findById(req.param('_id'), function (err, product) {
+      db.Item.findById(req.param('_id'), function (err, product) {
         if (err) res.json({error: err, message: 'Error', success: false})
         res.json(product)
       })
     }, // End of data method
     create: function (req, res) {
-      console.log('======Creating a new product request+++++++')
-      if (req.body.product) {
-        var product = new db.Product(req.body.product)
+      console.log('======Creating a new product request+++++++', req.body)
+      if (req.body) {
+        var product = new db.Item(req.body)
         product.save(function (err) {
           if (err) res.json({message: err.message, success: false})
           res.json({message: 'Order Created!', success: true})
@@ -113,7 +112,7 @@ module.exports = {
       }
     }, // End of create method
     signIn: function (req, res) {
-      patient.findOne({
+      db.Patient.findOne({
         email: req.body.email
       }, function (err, patient) {
         if (err) res.json({
