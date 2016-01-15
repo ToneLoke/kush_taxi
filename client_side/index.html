@@ -50,7 +50,7 @@
   <!--------------------------------->
   <main>
     <!-- Modal Structure 1 -->
-    <div id="modal1" class="modal grey darken-4">
+    <div id="modal1" class="modal  grey darken-4">
       <div class="modal-content lighten-5 ">
         <!-- SignUp Form-->
         <div class="white-text">
@@ -190,7 +190,7 @@
     <!-- End Modal Structure 1 -->
 
     <!-- Modal Structure 2 -->
-    <div id="modal2" class="modal grey darken-4">
+    <div id="modal2" class="modal  grey darken-4">
       <div class="modal-content lighten-5 z-depth-5">
 
         <!-- Patient Login Form -->
@@ -305,9 +305,13 @@
         in_duration: 300, // Transition in duration
         out_duration: 200, // Transition out duration
         ready: function() {
+          $('body').css('overflow', 'hidden')
+          $('body').css('position', 'fixed')
           // alert('Ready');
         }, // Callback for Modal open
         complete: function() {
+          $('body').css('overflow', 'auto')
+          $('body').css('position', 'relative')
             // alert('Closed');
           } // Callback for Modal close
       });
