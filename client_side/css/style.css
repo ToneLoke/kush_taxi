@@ -2,6 +2,7 @@
 *{
   border-radius: 2px;
   color: #eeff41;
+  font-family: 'Playfair Display', serif;
 }
 body {
   display: flex;
@@ -146,6 +147,14 @@ p.tag-line{
   color: #efcf02;
   font-weight: bolder;
 }
+
+
+.modal{
+  width: 350px;
+  length:600px;
+}
+
+
 
 
 /*=====*/

@@ -7,6 +7,7 @@
   <title>Kush Taxi</title>
   <!-- CSS STYLE SHEETS AND FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Signika|Fjalla+One|Playfair+Display" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
@@ -51,7 +52,7 @@
   <!--------------------------------->
   <main>
     <!-- Modal Structure 1 -->
-    <div id="modal1" class="modal grey darken-4" style="z-index: 1003; display: none; opacity: 0; transform: scaleX(1.2); top: 0.869565px;">
+    <div id="modal1" class="modal grey darken-4 modal-fixed-footer" style="z-index: 1003; display: none; opacity: 0; transform: scaleX(1.2); top: 0.869565px;">
       <div class="modal-content lighten-5 ">
         <!-- SignUp Form-->
         <div class="white-text">
@@ -172,21 +173,20 @@
               <input ng-model="su.patient.agreement" id="agreement" type="text" class="validate">
               <label for="agreement">Type "I agree" to continue</label>
             </div>
-
-            <!-- Submit Button -->
-            <div class="input-field col s1 offset-s11">
-              <button type="submit" class="btn modal-action modal-close waves-effect waves-light blue-black lime accent-2 grey-text text-darken-4">Submit</button>
-            </div>
-          </form>
-
-
-
-
+          </div>
         </div>
-        <!-- End of SignUp -->
 
+        <!-- Submit Button Fixed Footer -->
+        <div class="input-field col s1 offset-s11 modal-footer grey darken-4">
+          <button type="submit" class="btn modal-action modal-close waves-effect waves-light lime accent-2 grey-text text-darken-4">Submit</button>
+        </div>
+        <!-- End Submit Button Fixed Footer -->
+
+        </form>
       </div>
-    </div>
+      <!-- End of SignUp -->
+
+
 
     <!-- End Signup MOdal Structure -->
     <!-- Login Modal Structure -->
@@ -289,7 +289,7 @@
   <script type="text/javascript">
     $(document).ready(function() {
 
-      $(".button-collapse").sideNav({
+      $('.button-collapse').sideNav({
         menuWidth: 300,
         edge: 'left',
         closeOnClick: true
@@ -301,13 +301,18 @@
         in_duration: 300, // Transition in duration
         out_duration: 200, // Transition out duration
         ready: function() {
+          // $('footer').css('overflow', 'hidden')
           $('body').css('overflow', 'hidden')
+          // $('footer').css('position', 'fixed')
           $('body').css('position', 'fixed')
           // alert('Ready');
         }, // Callback for Modal open
         complete: function() {
           $('body').css('overflow', 'auto')
+          // $('footer').css('overflow', 'auto')
           $('body').css('position', 'relative')
+          // $('footer').css('position', 'relative')
+
             // alert('Closed');
           } // Callback for Modal close
       });
