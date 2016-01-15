@@ -58,7 +58,15 @@ p.tag-line{
   position: relative;
   left: -90px;
   right: 100px;
+  font-weight: bolder;
 }
+
+.join-now{
+  color: #efcf02;
+  font-weight: bolder;
+}
+
+
 /*=====*/
 /*====================*/
 /*------img size for parallax------*/
