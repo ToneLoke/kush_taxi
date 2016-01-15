@@ -82,38 +82,35 @@
     <div class="card-reveal grey darken-4">
       <span class="card-title">Green Krack Prices<i class="material-icons right">close</i></span>
       <!-- Dropdown Trigger -->
-      <a class='dropdown-button btn' href='#' data-activates='dropdown1' data-beloworigin='true'>Choose an option</a>
+      <a class="dropdown-button btn" href="#" data-activates="dropdown1" data-beloworigin="true">Choose an option</a>
       <!-- Dropdown Structure -->
-      <ul id='dropdown1' class='dropdown-content'>
+      <ul id="dropdown1" class="dropdown-content">
         <li><a href="#!">1g</a></li>
         <li><a href="#!">1/8oz (3.5g)</a></li>
         <li><a href="#!">1/4oz (7g)</a></li>
         <li><a href="#!">1/2oz (14g)</a></li>
         <li><a href="#!">1oz (28g)</a></li>
       </ul>
-
-
-
     </div>
   </div>
 </div>
 <script type="text/javascript">
 $(document).ready(function() {
-  console.log('working');
-  $('li.tab a').click(function(){
+  console.log("working");
+  $("li.tab a").click(function(){
     //console.log(this)
-    $('li.tab a').removeClass('active')
-    $(this).addClass('active')
+    $("li.tab a").removeClass("active")
+    $(this).addClass("active")
     // $('#search').val('')
-  })
-  $('.dropdown-button').dropdown({
+  });
+  $(".dropdown-button").dropdown({
     inDuration: 300,
     outDuration: 225,
-    constrain_width: false, // Does not change width of dropdown to that of the activator
+    constrain_width: true, // Does not change width of dropdown to that of the activator
     hover: true, // Activate on hover
     gutter: 0, // Spacing from edge
     belowOrigin: false, // Displays dropdown below the button
-    alignment: 'left' // Displays dropdown with edge aligned to the left of button
+    alignment: "left" // Displays dropdown with edge aligned to the left of button
   }
 );
 })
