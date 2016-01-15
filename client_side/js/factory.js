@@ -9,7 +9,7 @@
   // inject the depencies to use for each factory
   leaflyApi.$inject = ['$http']
   strainFactory.$inject = ['$http']
-  Auth.$inject = ['$http', '$q', AuthToken]
+  Auth.$inject = ['$http', '$q', 'AuthToken']
   AuthToken.$inject = ['$window']
   AuthInterceptor.$inject = ['$q', '$location', 'AuthToken']
   // ========================================
@@ -20,11 +20,11 @@
 
     strainData.createStrain = function (strain) {
       console.log('strainFactory', strain)
-      return $http.post('http://localhost:3000/api/products', strain)
+      return $http.post('http://192.168.1.153:3000/api/products', strain)
     }
     strainData.allStrains = function (strain) {
       console.log('getting all strains')
-      return $http.get('http://localhost:3000/api/products')
+      return $http.get('http://192.168.1.153:3000/api/products')
     }
     return strainData
   }

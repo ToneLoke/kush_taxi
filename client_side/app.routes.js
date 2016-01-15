@@ -30,6 +30,13 @@ angular.module('appRoutes', ['ui.router', 'controllers'])
           controller: 'orders as or'
         })
 
+        // Order STATES ==========================
+        .state('orders', {
+          url: '/orders',
+          templateUrl: '/partials/orders.html',
+          controller: 'patients as p'
+        })
+
         // PRODUCT STATES =======================
         .state('products', {
           url: '/products',

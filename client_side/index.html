@@ -37,7 +37,7 @@
 
           <!-- Modal Trigger 2 -->
           <li class="links">
-            <a href="#modal2" class="waves-effect waves-light modal-trigger lime-text accent-2">Login</a>
+            <a href="#login" class="waves-effect waves-light modal-trigger lime-text accent-2">Login</a>
           </li>
           <!-- End Modal Trigger 2 -->
 
@@ -188,38 +188,33 @@
       </div>
     </div>
 
-    <!-- End Modal Structure 1 -->
-
-    <!-- Modal Structure 2 -->
-    <div id="modal2" class="modal grey darken-4" style="z-index: 1003; display: none; opacity: 0; transform: scaleX(1.2); top: 0.869565px;">
+    <!-- End Signup MOdal Structure -->
+    <!-- Login Modal Structure -->
+    <div id="login" class="modal grey darken-4" style="z-index: 1003; display: none; opacity: 0; transform: scaleX(1.2); top: 0.869565px;">
       <div class="modal-content lighten-5 z-depth-5">
-
         <!-- Patient Login Form -->
-        <div class="white-text text darken-2">
+        <div class="white-text text darken-2 center">
           <h5>Patient Portal</h5>
           <form ng-submit="ln.submit()">
             <div class="row">
-              <button class="btn-floating btn-large waves-effect waves-light lime accent-2"><i class="material-icons grey-text text-darken-4">email</i></button>
               <div class="input-field">
-                <!-- <i class="fa fa-envelope prefix lime accent-2"></i> -->
-                <input id="email_login" type="email" class="validate">
+                <i class="material-icons prefix circle lime-text text-accent-2">email</i>
+                <input id="email_login" type="email" class="validate" required>
                 <label for="email_login">Email</label>
               </div>
             </div>
             <div class="row">
-              <button class="btn-floating btn-large waves-effect waves-light lime accent-2"><i class="material-icons grey-text text-darken-4">vpn_key</i></button>
               <div class="input-field">
-                <!-- <i class="fa fa-key prefix lime accent-2"></i> -->
-
-                <input id="password_login" type="password" class="validate">
+                <i class="material-icons prefix circle lime-text text-accent-2">vpn_key</i>
+                <input id="password_login" type="password" class="validate" required>
                 <label for="password_login">Password</label>
               </div>
             </div>
-            <div class="row">
-              <div class="input-field col s6">
+            <div class="row center">
+              <div class="input-field col s12">
                 <button type="submit" class="btn-floating btn-large waves-effect waves-light lime accent-2 right"><i class="material-icons grey-text text-darken-4">input</i></button>
+                <h5 class="right" style="margin: 14px 10px;">Login</h5>
               </div>
-
             </div>
           </form>
         </div>

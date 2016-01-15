@@ -13,12 +13,17 @@
   // ======================================
   function products (leafly, strainFactory) {
     console.log('productsController+++++++++++++++')
+
     var ctrlP = this
     ctrlP.strains = []
     strainFactory.allStrains()
     .then(function (strains) {
+      // alert("productsController",strains)
       console.log('strains from db:', strains)
       ctrlP.strains = strains.data
+      },function (error){
+      // alert("productsController Error:",error)
+      console.log('response from db:', error)
     })
     // leafly.allStrains()
     //   .then(function (response) {
@@ -42,7 +47,7 @@
   // ======================================
   // Patients controller
   // ======================================
-  function patients (Auth) {
+  function patients (Auth,$rootScope) {
     var patient = this
     patient.orders = []
     // get info if a person is logged in

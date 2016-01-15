@@ -12,7 +12,7 @@ module.exports = {
       db.Item.find({}, function (err, products) {
         if (err) res.json({error: err, message: 'Error', success: false})
         res.json(products)
-      })
+      }).limit(5)
     }, // End of All Method
     // Show a single product data
     data: function (req, res) {
