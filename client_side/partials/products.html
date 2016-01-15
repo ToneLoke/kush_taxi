@@ -1,21 +1,31 @@
 <div class="row">
+
+
   <div class="col s6">
-    <div class="search-wrapper">
-      <input id="search" type="search"/>
-      <i class="material-icons lime-text text-accent-2">search</i>
-    </div>
-    <p>
-      <input name="group1" type="radio" id="test1" />
-      <label for="test1">Red</label>
-    </p>
-    <p>
-      <input name="group1" type="radio" id="test2" />
-      <label for="test2">Yellow</label>
-    </p>
-    <p>
-      <input class="with-gap" name="group1" type="radio" id="test3"  />
-      <label for="test3">Green</label>
-    </p>
+    <ul class="grey darken-4 row">
+
+
+      <div class="search-wrapper">
+        <i class="material-icons prefix lime-text text-accent-2 col s2">search</i>
+        <input id="search" type="search" class="col s8 offset-s2"/>
+      </div>
+
+      <div class="row">
+        <p>
+          <input name="group1" type="radio" id="test1" />
+          <label class="lime-text text-accent-2" for="test1">Name</label>
+        </p>
+        <p>
+          <input name="group1" type="radio" id="test2" />
+          <label class="lime-text text-accent-2" for="test2">Price</label>
+        </p>
+        <p>
+          <input name="group1" type="radio" id="test3" />
+          <label class="lime-text text-accent-2" for="test3">Type</label>
+        </p>
+
+      </div>
+    </ul>
 
   </div>
   <!--Select Categories -->
@@ -42,7 +52,7 @@
         <a ui-sref="angularjs">
           <div class="chip grey darken-4 lime-text text-accent-2">
             <img src="/images/Concentrates.jpg" class="responsive-img" alt="Concentrates">
-            Pure
+            Hash
           </div>
         </a>
       </li>
@@ -78,25 +88,26 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript">
-  $(document).ready(function() {
-    console.log('working');
-    $('li.tab a').click(function(){
-      //console.log(this)
-      $('li.tab a').removeClass('active')
-      $(this).addClass('active')
-      // $('#search').val('')
-    })
-    $('.dropdown-button').dropdown({
-      inDuration: 300,
-      outDuration: 225,
-      constrain_width: false, // Does not change width of dropdown to that of the activator
-      hover: true, // Activate on hover
-      gutter: 0, // Spacing from edge
-      belowOrigin: false, // Displays dropdown below the button
-      alignment: 'left' // Displays dropdown with edge aligned to the left of button
-    }
-  );
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+  console.log('working');
+  $('li.tab a').click(function(){
+    //console.log(this)
+    $('li.tab a').removeClass('active')
+    $(this).addClass('active')
+    // $('#search').val('')
+  })
+  $('.dropdown-button').dropdown({
+    inDuration: 300,
+    outDuration: 225,
+    constrain_width: false, // Does not change width of dropdown to that of the activator
+    hover: true, // Activate on hover
+    gutter: 0, // Spacing from edge
+    belowOrigin: false, // Displays dropdown below the button
+    alignment: 'left' // Displays dropdown with edge aligned to the left of button
+  }
+);
 })
 </script>
 <!-- End Template for Products -->
