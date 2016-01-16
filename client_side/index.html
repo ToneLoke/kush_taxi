@@ -17,7 +17,7 @@
   <!--------------------------------->
 </head>
 
-<body ng-controller="signUp as su" class="grey darken-4 lime-text text-accent-2 ">
+<body ng-controller="signUp as su" class="grey darken-4 lime-text text-accent-2 test">
   <!--------------------------------->
   <!-- top nav bar -->
   <header class="navbar-fixed">
@@ -30,298 +30,333 @@
           <li class="links">
             <span class="left">Kush</span><a data-activates="slide-out" class="button-collapse show-on-large element-animation lime-text accent-2" id="car"><i class="fa fa-taxi "></i></a></li>
 
-          <!-- Modal Trigger 1 -->
-          <li class="links">
-            <a href="#modal1" class="waves-effect waves-light modal-trigger lime-text accent-2">Join</a>
-          </li>
-          <!-- End Modal Trigger 1 -->
+            <!-- Modal Trigger 1 -->
+            <li class="links">
+              <a href="#signups" class="waves-effect waves-light modal-trigger lime-text accent-2">Join</a>
+            </li>
+            <!-- End Modal Trigger 1 -->
 
-          <!-- Modal Trigger 2 -->
-          <li class="links">
-            <a href="#login" class="waves-effect waves-light modal-trigger lime-text accent-2">Login</a>
-          </li>
-          <!-- End Modal Trigger 2 -->
+            <!-- Modal Trigger 2 -->
+            <li class="links">
+              <a href="#logins" class="waves-effect waves-light modal-trigger lime-text accent-2">Login</a>
+            </li>
+            <!-- End Modal Trigger 2 -->
 
-          <li class="links"><a href="#/cart" class="waves-effect waves-light lime-text accent-2" id="cart"><i class="fa fa-cart-plus "></i></a></li>
-        </ul>
+            <li class="links"><a href="#/cart" class="waves-effect waves-light lime-text accent-2" id="cart"><i class="fa fa-cart-plus "></i></a></li>
+          </ul>
 
-      </div>
-    </nav>
-  </header>
-  <!-- End of top nav bar -->
-  <!--------------------------------->
-  <main>
-    <!-- Modal Structure 1 -->
-    <div id="modal1" class="modal grey darken-4 modal-fixed-footer" style="z-index: 1003; display: none; opacity: 0; transform: scaleX(1.2); top: 0.869565px;">
-      <div class="modal-content lighten-5 ">
-        <!-- SignUp Form-->
-        <div class="white-text">
-          <h5>Register</h5>
-          <form ng-submit="su.submit()">
-            <div class="input-field">
-              <input ng-model="su.patient.fname" id="first_name" type="text" class="validate">
-              <label for="first_name">First Name</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.lname" id="last_name" type="text" class="validate">
-              <label for="last_name">Last Name</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.username" id="username" type="text" class="validate">
-              <label for="username">Username</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.email" id="email" type="email" class="validate">
-              <label for="email">Email</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.password" id="password" type="password" class="validate">
-              <label for="password">Password</label>
-            </div>
-
-            <br>
-            <h5>Personal Information</h5>
-
-            <div class="input-field">
-              <input ng-model="su.patient.addone" id="address_one" type="text" class="validate">
-              <label for="address_one">Street Address 1</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.addtwo" id="address_two" type="text" class="validate">
-              <label for="address_two">Street Address 2</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.city" id="city" type="text" class="validate">
-              <label for="city">City</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.state" id="state" type="text" class="validate">
-              <label for="state">State</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.zip" id="zip" type="text" class="validate">
-              <label for="zip">Zip Code</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.phone" id="phone" type="text" class="validate">
-              <label for="phone">Phone Number</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.dob" id="dob" type="text" class="validate">
-              <label for="dob">Date of Birth</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.dl" id="dl" type="text" class="validate">
-              <label for="dl">Driver's License#</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.dname" id="d_name" type="text" class="validate">
-              <label for="d_name">Recommending Doctor's Name</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.dphone" id="doc_phone" type="text" class="validate">
-              <label for="doc_phone">Doctor's Number</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.dverify" id="d_verify" type="text" class="validate">
-              <label for="d_verify">Doctor's Verification Website </label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.pid" id="p_id" type="text" class="validate">
-              <label for="p_id">Patient ID#</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.recexp" id="rec_exp" type="text" class="validate">
-              <label for="rec_exp">Rec Expiration Date</label>
-            </div>
-            <div class="input-field">
-              <input ng-model="su.patient.refer" id="refer" type="text" class="validate">
-              <label for="refer">How did you hear about us?</label>
-            </div>
-
-
-
-            <br>
-            <h5>Upload Documents</h5>
-            <div class="file-field input-field">
-              <div class="btn-floating left">
-                <i class="fa fa-file-image-o lime accent-2 grey-text text-darken-4"></i>
-                <input type="file" file-model="su.patient.idImg"/>
-              </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" id="photo" type="text" placeholder="Upload Photo ID">
-              </div>
-            </div>
-            <div class="file-field input-field">
-              <div class="btn-floating left">
-                <i class="fa fa-file-o lime accent-2 grey-text text-darken-4"></i>
-                <input type="file" file-model="su.patient.recImg"/>
-              </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" id="rec" type="text" placeholder="Upload Recommendation">
-              </div>
-            </div>
-
-            <br>
-            <h5>Member Agreement</h5>
-            <h7 class="grey-text">I declare under penalty of perjury that the information provided on this membership agreement is true and correct. I further declare under penalty of perjury that I am a medical cannabis patient and will not divert my medicine for non-medical
-              use or for use by a non-member. I further declare under penalty of perjury that I am not a member of law enforcement and will not divert any medicine for the purpose of any criminal investigations. I have read and understand the above requirements
-              and agree to follow these guidelines. I acknowledge that I have been offered the ability to review a copy of the Articles of Incorporation, Bylaws, and Membership Rules and Policies. Additionally, I hereby authorize the release of my medical
-              information concerning my diagnosis, condition or prognosis to the Collective and its authorized representatives for purposes of verifying the validity of my medical recommendation and the valid operation of the Collective pursuant to the
-              Compassionate Use Act and Medical Marijuana Program Act.</h7>
-            <div class="input-field">
-              <input ng-model="su.patient.agreement" id="agreement" type="text" class="validate">
-              <label for="agreement">Type "I agree" to continue</label>
-            </div>
-          </div>
         </div>
-
-        <!-- Submit Button Fixed Footer -->
-        <div class="input-field col s1 offset-s11 modal-footer grey darken-4">
-          <button type="submit" class="btn modal-action modal-close waves-effect waves-light lime accent-2 grey-text text-darken-4">Submit</button>
-        </div>
-        <!-- End Submit Button Fixed Footer -->
-
-        </form>
-      </div>
-      <!-- End of SignUp -->
-
-
-
-    <!-- End Signup MOdal Structure -->
-    <!-- Login Modal Structure -->
-    <div id="login" class="modal grey darken-4" style="z-index: 1003; display: none; opacity: 0; transform: scaleX(1.2); top: 0.869565px;">
-      <div class="modal-content lighten-5 z-depth-5">
-        <!-- Patient Login Form -->
-        <div class="white-text text darken-2 center">
-          <h5>Patient Portal</h5>
-          <form ng-submit="ln.submit()">
-            <div class="row">
+      </nav>
+    </header>
+    <!-- End of top nav bar -->
+    <!--------------------------------->
+    <main>
+      <!-- Modal Structure 1 -->
+      <div id="signups" class="modal grey darken-4 modal-fixed-footer" style="z-index: 1003; display: none; transform: scaleX(1.2); top: 0.869565px;">
+        <div class="modal-content lighten-5 ">
+          <!-- SignUp Form-->
+          <div class="w white-text">
+            <div class="sticky1">
+              <h5>Register</h5>
+            </div>
+            <form ng-submit="su.submit()">
               <div class="input-field">
-                <i class="material-icons prefix circle lime-text text-accent-2">email</i>
-                <input id="email_login" type="email" class="validate" required>
-                <label for="email_login">Email</label>
+                <input ng-model="su.patient.fname" id="first_name" type="text" class="validate">
+                <label for="first_name">First Name</label>
               </div>
-            </div>
-            <div class="row">
               <div class="input-field">
-                <i class="material-icons prefix circle lime-text text-accent-2">vpn_key</i>
-                <input id="password_login" type="password" class="validate" required>
-                <label for="password_login">Password</label>
+                <input ng-model="su.patient.lname" id="last_name" type="text" class="validate">
+                <label for="last_name">Last Name</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.username" id="username" type="text" class="validate">
+                <label for="username">Username</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.email" id="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.password" id="password" type="password" class="validate">
+                <label for="password">Password</label>
+              </div>
+
+              <br>
+              <div class="sticky2">
+                <h5 >Personal Information</h5>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.addone" id="address_one" type="text" class="validate">
+                <label for="address_one">Street Address 1</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.addtwo" id="address_two" type="text" class="validate">
+                <label for="address_two">Street Address 2</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.city" id="city" type="text" class="validate">
+                <label for="city">City</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.state" id="state" type="text" class="validate">
+                <label for="state">State</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.zip" id="zip" type="text" class="validate">
+                <label for="zip">Zip Code</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.phone" id="phone" type="text" class="validate">
+                <label for="phone">Phone Number</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.dob" id="dob" type="text" class="validate">
+                <label for="dob">Date of Birth</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.dl" id="dl" type="text" class="validate">
+                <label for="dl">Driver's License#</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.dname" id="d_name" type="text" class="validate">
+                <label for="d_name">Recommending Doctor's Name</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.dphone" id="doc_phone" type="text" class="validate">
+                <label for="doc_phone">Doctor's Number</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.dverify" id="d_verify" type="text" class="validate">
+                <label for="d_verify">Doctor's Verification Website </label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.pid" id="p_id" type="text" class="validate">
+                <label for="p_id">Patient ID#</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.recexp" id="rec_exp" type="text" class="validate">
+                <label for="rec_exp">Rec Expiration Date</label>
+              </div>
+              <div class="input-field">
+                <input ng-model="su.patient.refer" id="refer" type="text" class="validate">
+                <label for="refer">How did you hear about us?</label>
+              </div>
+
+
+
+              <br>
+              <div class="sticky3">
+                <h5>Upload Documents</h5>
+              </div>
+              <div class="file-field input-field">
+                <div class="btn-floating left">
+                  <i class="fa fa-file-image-o lime accent-2 grey-text text-darken-4"></i>
+                  <input type="file" file-model="su.patient.idImg"/>
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" id="photo" type="text" placeholder="Upload Photo ID">
+                </div>
+              </div>
+              <div class="file-field input-field">
+                <div class="btn-floating left">
+                  <i class="fa fa-file-o lime accent-2 grey-text text-darken-4"></i>
+                  <input type="file" file-model="su.patient.recImg"/>
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" id="rec" type="text" placeholder="Upload Recommendation">
+                </div>
+              </div>
+
+              <br>
+              <div class="sticky4">
+                <h5>Member Agreement</h5>
+              </div>
+              <h7 class="grey-text">I declare under penalty of perjury that the information provided on this membership agreement is true and correct. I further declare under penalty of perjury that I am a medical cannabis patient and will not divert my medicine for non-medical
+                use or for use by a non-member. I further declare under penalty of perjury that I am not a member of law enforcement and will not divert any medicine for the purpose of any criminal investigations. I have read and understand the above requirements
+                and agree to follow these guidelines. I acknowledge that I have been offered the ability to review a copy of the Articles of Incorporation, Bylaws, and Membership Rules and Policies. Additionally, I hereby authorize the release of my medical
+                information concerning my diagnosis, condition or prognosis to the Collective and its authorized representatives for purposes of verifying the validity of my medical recommendation and the valid operation of the Collective pursuant to the
+                Compassionate Use Act and Medical Marijuana Program Act.</h7>
+                <div class="input-field">
+                  <input ng-model="su.patient.agreement" id="agreement" type="text" class="validate">
+                  <label for="agreement">Type "I agree" to continue</label>
+                </div>
               </div>
             </div>
-            <div class="row center">
-              <div class="input-field col s12">
-                <button type="submit" class="btn-floating btn-large waves-effect waves-light lime accent-2 right"><i class="material-icons grey-text text-darken-4">input</i></button>
-                <h5 class="right" style="margin: 14px 10px;">Login</h5>
-              </div>
+
+            <!-- Submit Button Fixed Footer -->
+            <div class="input-field col s1 offset-s11 modal-footer grey darken-4">
+              <button type="submit" class="btn modal-action modal-close waves-effect waves-light lime accent-2 grey-text text-darken-4">Submit</button>
             </div>
+            <!-- End Submit Button Fixed Footer -->
+
           </form>
         </div>
-      </div>
-    </div>
-      <!-- End Patient Login Form -->
+        <!-- End of SignUp -->
 
 
-    <!-- End Modal Structure 2 -->
 
-    <!-- end parallax -->
-    <!--------------------------------->
-    <!-- Pop Out Side Menu -->
-    <div class="row z-depth-5 ">
-      <div class="container">
-        <ul id="slide-out" class="side-nav grey darken-4">
-          <li><a class="lime-text text-accent-2" href="#/products">Products</a></li>
-          <li><a class="lime-text text-accent-2" href="#/locations">Service Area</a></li>
-          <li><a class="lime-text text-accent-2" href="#/orders">Order History</a></li>
-          <li><a class="lime-text text-accent-2" href="#/contact">Contact Us</a></li>
-
-      </div>
-    </div>
-    <!-- End of Pop Out Side Menu  -->
-    <!--------------------------------->
-
-    <!-- UI router state change -->
-    <div ui-view></div>
-    <!-- End UI router state change -->
-  </main>
-  <!--------------------------------->
-  <!-- Footer  -->
-  <footer class="page-footer black z-depth-5">
-    <div class="container">
-      <div class="row ">
-        <div class="col s6">
-          <h5 class="lime-text accent-2">Hours & Info</h5>
-          <p class="lime-text accent-2">
-            Serving Venice, Santa Monica, Marina Del Rey
-            <br> Sun-Thurs: 2pm-Midnight, Fri-Sat: 2pm-1am
-            <br> 310.625.4424
-            <br> gethigh@kushtaxi.com
-          </p>
-        </div>
-        <div class="col s6 footer-copyright black">
-          <div class="container">
-            <button class="btn waves-effect waves-light right lime accent-2 grey-text text-darken-4" type="submit" href="#/contact">Contact Form
-              <i class="material-icons right">send</i>
-            </button>
-            <!-- <a class="grey-text text-lighten-4 right" href="#/contact">Contact Us</a> -->
+        <!-- End Signup MOdal Structure -->
+        <!-- Login Modal Structure -->
+        <div id="logins" class="modal grey darken-4" style="z-index: 1003; display: none; opacity: 0; transform: scaleX(1.2); top: 0.869565px;">
+          <div class="modal-content lighten-5 z-depth-5">
+            <!-- Patient Login Form -->
+            <div class="white-text text darken-2 center">
+              <h5>Patient Portal</h5>
+              <form ng-submit="ln.submit()">
+                <div class="row">
+                  <div class="input-field">
+                    <i class="material-icons prefix circle lime-text text-accent-2">email</i>
+                    <input id="email_login" type="email" class="validate" required>
+                    <label for="email_login">Email</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field">
+                    <i class="material-icons prefix circle lime-text text-accent-2">vpn_key</i>
+                    <input id="password_login" type="password" class="validate" required>
+                    <label for="password_login">Password</label>
+                  </div>
+                </div>
+                <div class="row center">
+                  <div class="input-field col s12">
+                    <button type="submit" class="btn-floating btn-large waves-effect waves-light lime accent-2 right"><i class="material-icons grey-text text-darken-4">input</i></button>
+                    <h5 class="right" style="margin: 14px 10px;">Login</h5>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
-          © 2016 E.T. Productions
         </div>
-      </div>
-
-    </div>
-  </footer>
-  <!-- End of Footer -->
-  <!--------------------------------->
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-animate.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
-  <script src="app.js"></script>
-  <script src="app.routes.js"></script>
-  <script src="js/factory.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/angular-materialize.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-
-      $('.button-collapse').sideNav({
-        menuWidth: 300,
-        edge: 'left',
-        closeOnClick: true
-      });
-
-      $('.modal-trigger').leanModal({
-        dismissible: true, // Modal can be dismissed by clicking outside of the modal
-        opacity: .5, // Opacity of modal background
-        in_duration: 300, // Transition in duration
-        out_duration: 200, // Transition out duration
-        ready: function() {
-          // $('footer').css('overflow', 'hidden')
-          $('body').css('overflow', 'hidden')
-          // $('footer').css('position', 'fixed')
-          $('body').css('position', 'fixed')
-          // alert('Ready');
-        }, // Callback for Modal open
-        complete: function() {
-          $('body').css('overflow', 'auto')
-          // $('footer').css('overflow', 'auto')
-          $('body').css('position', 'relative')
-          // $('footer').css('position', 'relative')
-
-            // alert('Closed');
-          } // Callback for Modal close
-      });
+        <!-- End Patient Login Form -->
 
 
-    });
-  </script>
-  <!-- End of Scripts -->
-  <!--------------------------------->
-</body>
+        <!-- End Modal Structure 2 -->
 
-</html>
+        <!-- end parallax -->
+        <!--------------------------------->
+        <!-- Pop Out Side Menu -->
+        <div class="row z-depth-5 ">
+          <div class="container">
+            <ul id="slide-out" class="side-nav grey darken-4">
+              <li><a class="lime-text text-accent-2" href="#/products">Products</a></li>
+              <li><a class="lime-text text-accent-2" href="#/locations">Service Area</a></li>
+              <li><a class="lime-text text-accent-2" href="#/orders">Order History</a></li>
+              <li><a class="lime-text text-accent-2" href="#/contact">Contact Us</a></li>
+
+            </div>
+          </div>
+          <!-- End of Pop Out Side Menu  -->
+          <!--------------------------------->
+
+          <!-- UI router state change -->
+          <div ui-view></div>
+          <!-- End UI router state change -->
+        </main>
+        <!--------------------------------->
+        <!-- Footer  -->
+        <footer class="page-footer black z-depth-5">
+          <div class="container">
+            <div class="row ">
+              <div class="col s6">
+                <h5 class="lime-text accent-2">Hours & Info</h5>
+                <p class="lime-text accent-2">
+                  Serving Venice, Santa Monica, Marina Del Rey
+                  <br> Sun-Thurs: 2pm-Midnight, Fri-Sat: 2pm-1am
+                  <br> 310.625.4424
+                  <br> gethigh@kushtaxi.com
+                </p>
+              </div>
+              <div class="col s6 footer-copyright black">
+                <div class="container">
+                  <button class="btn waves-effect waves-light right lime accent-2 grey-text text-darken-4" type="submit" href="#/contact">Contact Form
+                    <i class="material-icons right">send</i>
+                  </button>
+                  <!-- <a class="grey-text text-lighten-4 right" href="#/contact">Contact Us</a> -->
+                </div>
+                © 2016 E.T. Productions
+              </div>
+            </div>
+
+          </div>
+        </footer>
+        <!-- End of Footer -->
+        <!--------------------------------->
+        <!-- Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-animate.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+        <script src="app.js"></script>
+        <script src="app.routes.js"></script>
+        <script src="js/factory.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/angular-materialize.js"></script>
+        <script src="js/ScrollToFixed.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+
+          $('.button-collapse').sideNav({
+            menuWidth: 300,
+            edge: 'left',
+            closeOnClick: true
+          })
+
+          $('.modal-content').on('scroll',function(){
+            var scrollPosition = $('.modal-content').first().scrollTop()
+            if(scrollPosition > -1 && scrollPosition < 431)
+            {
+              $('.sticky1').addClass('fixed')
+              $('.sticky2').removeClass('fixed')
+              $('.sticky3').removeClass('fixed')
+              $('.sticky4').removeClass('fixed')
+            }
+            else if(scrollPosition > 431 && scrollPosition < 1526)
+            {
+              $('.sticky1').removeClass('fixed')
+              $('.sticky3').removeClass('fixed')
+              $('.sticky4').removeClass('fixed')
+              $('.sticky2').addClass('fixed')
+            }
+            else if(scrollPosition > 1526 && scrollPosition < 1734)
+            {
+              $('.sticky1').removeClass('fixed')
+              $('.sticky2').removeClass('fixed')
+              $('.sticky4').removeClass('fixed')
+              $('.sticky3').addClass('fixed')
+            }
+            else if(scrollPosition > 1734)
+            {
+              $('.sticky1').removeClass('fixed')
+              $('.sticky2').removeClass('fixed')
+              $('.sticky3').removeClass('fixed')
+              $('.sticky4').addClass('fixed')
+            }
+
+          })
+
+        $('.modal-trigger').leanModal({
+          dismissible: true, // Modal can be dismissed by clicking outside of the modal
+          opacity: .3, // Opacity of modal background
+          in_duration: 300, // Transition in duration
+          out_duration: 200, // Transition out duration
+          ready: function() {
+            $('.test').addClass('tests')
+
+
+            }, // Callback for Modal open
+            complete: function() {
+              $('.test').removeClass('tests')
+
+            } // Callback for Modal close
+          })
+        })
+
+
+        </script>
+        <!-- End of Scripts -->
+        <!--------------------------------->
+      </body>
+
+      </html>

@@ -8,8 +8,13 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll !important;
 }
-
+.tests{
+  overflow: hidden;
+  position: fixed;
+}
 main {
   flex: 1 0 auto;
 }
@@ -21,6 +26,11 @@ header{
   border: 3px #eeff41 solid;
   border-radius: 15px;
   padding: 15px;
+}
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 34;
 }
 .row{
   padding: 5px;
