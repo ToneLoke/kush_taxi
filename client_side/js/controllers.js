@@ -47,7 +47,7 @@
   // ======================================
   // Patients controller
   // ======================================
-  function patients (Auth,$rootScope) {
+  function patients (Auth,$rootScope,$location) {
     var patient = this
     patient.orders = []
     // get info if a person is logged in
