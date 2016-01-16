@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width; initial-scale=1.0 maximum-scale=1.0; user-scalable=0;" />
+  <meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <title>Kush Taxi</title>
   <!-- CSS STYLE SHEETS AND FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -56,7 +56,7 @@
       <div class="modal-content lighten-5 ">
         <!-- SignUp Form-->
         <div class="white-text">
-          <h5>Register</h5>
+          <div class="form-header" pushpin pushpin-top="0" pushpin-offset="0" pushpin-bottom="Infinity"><h5>Register</h5></div>
           <form ng-submit="su.submit()">
             <div class="input-field">
               <input ng-model="su.patient.fname" id="first_name" type="text" class="validate">
@@ -80,7 +80,7 @@
             </div>
 
             <br>
-            <h5>Personal Information</h5>
+            <div class="form-header"><h5 class="form-header">Personal Information</h5></div>
 
             <div class="input-field">
               <input ng-model="su.patient.addone" id="address_one" type="text" class="validate">
@@ -139,10 +139,8 @@
               <label for="refer">How did you hear about us?</label>
             </div>
 
-
-
             <br>
-            <h5>Upload Documents</h5>
+            <div class="form-header"><h5>Upload Documents</h5></div>
             <div class="file-field input-field">
               <div class="btn-floating left">
                 <i class="fa fa-file-image-o lime accent-2 grey-text text-darken-4"></i>
@@ -163,7 +161,7 @@
             </div>
 
             <br>
-            <h5>Member Agreement</h5>
+            <div class="form-header"><h5>Member Agreement</h5></div>
             <h7 class="grey-text">I declare under penalty of perjury that the information provided on this membership agreement is true and correct. I further declare under penalty of perjury that I am a medical cannabis patient and will not divert my medicine for non-medical
               use or for use by a non-member. I further declare under penalty of perjury that I am not a member of law enforcement and will not divert any medicine for the purpose of any criminal investigations. I have read and understand the above requirements
               and agree to follow these guidelines. I acknowledge that I have been offered the ability to review a copy of the Articles of Incorporation, Bylaws, and Membership Rules and Policies. Additionally, I hereby authorize the release of my medical
@@ -316,10 +314,139 @@
             // alert('Closed');
           } // Callback for Modal close
       });
-
-
     });
   </script>
+
+  <script type="text/javascript">
+  var scroll = $('.modal-content').first().scrollTop();
+  var stickyOffset = $('.form-header').offset().top;
+  var sticky = $('form-header');
+
+    $('.modal-content').scroll(function(){
+      sticky.each(function(){
+        if (scroll >= stickyOffset){
+      $(this).pushpin({ top: $('.form-header').offset().top });
+    }
+
+    else{
+      return
+      }
+    })
+  });
+
+
+  </script>
+
+  <!-- <script type="text/javascript">
+
+      function UpdateTableHeaders() {
+        $(".form-area").each(function() {
+
+       var el             = $(this),
+           offset         = el.offset(),
+           scrollTop      = $('.modal-content').scrollTop(),
+           floatingHeader = $(".floatingHeader", this)
+
+       if ((scrollTop > offset.top) && (scrollTop < offset.top + el.height())) {
+           floatingHeader.css({
+            "visibility": "visible"
+           });
+       } else {
+           floatingHeader.css({
+            "visibility": "hidden"
+           });
+       };
+   });
+}
+
+// DOM Ready
+$(function() {
+
+   var clonedHeaderRow;
+
+   $(".form-area").each(function() {
+       clonedHeaderRow = $(".form-header", this);
+       clonedHeaderRow
+         .before(clonedHeaderRow.clone())
+         .css("width", clonedHeaderRow.width())
+         .addClass("floatingHeader");
+
+   });
+
+   $('.modal-content')
+    .scroll(UpdateTableHeaders)
+    .trigger("scroll");
+
+    });
+
+    </script> -->
+
+  <!-- <script type="text/javascript">
+    var scroll = $('.modal-content').first().scrollTop();
+    var stickyOffset = $('.form-header').offset().top;
+    // var sticky = $('h5[form-header]');
+
+
+
+      $('.modal-content').scroll(function(){
+          $('h5[form-header]').each(function(){
+            var scroll = $('.modal-content').scrollTop();
+            var stickyOffset = $(this).offset().top;
+            if (scroll >= stickyOffset){
+          $(this).addClass('fixed')
+        }
+        else{
+          $(this).prev().removeClass('fixed');
+          }
+        })
+      });
+
+  </script> -->
+  <!-- <script type="text/javascript">
+  var headerTop = $('.form-header').offset().top;
+  var headerTop1 = $('.form-header1').offset().top;
+  var headerTop2 = $('.form-header2').offset().top;
+  var headerTop3 = $('.form-header3').offset().top;
+    $('window').scroll(function() {
+    var currentScroll = $(window).scrollTop();
+    if (currentScroll >= headerTop3) {
+      //keeps fixed at top
+        $('.form-header3').css({
+            position: 'fixed',
+            top: '0',
+            left: '0'
+        });
+    } else if (currentScroll >= headerTop2) {
+      //keeps fixed at top
+        $('.form-header2').css({
+            position: 'fixed',
+            top: '0',
+            left: '0'
+        });
+    } else if (currentScroll >= headerTop1) {
+      //keeps fixed at top
+        $('.form-header1').css({
+            position: 'fixed',
+            top: '0',
+            left: '0'
+        });
+    } else if (currentScroll >= headerTop) {
+      //keeps fixed at top
+        $('.form-header').css({
+            position: 'fixed',
+            top: '0',
+            left: '0'
+        });
+    } else {
+      //lets move with form back in line
+        $('.form-header').css({
+            position: 'static'
+        });
+    }
+});
+
+  </script> -->
+
   <!-- End of Scripts -->
   <!--------------------------------->
 </body>

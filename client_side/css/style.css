@@ -149,10 +149,22 @@ p.tag-line{
 }
 
 
-.modal{
+/*.modal{
   width: 350px;
   length:600px;
-}
+}*/
+
+/*.fixed{
+    position: fixed;
+    top:0; left:0;
+    width: 100%;
+  }*/
+
+  /*.floatingHeader {
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+}*/
 
 
 
