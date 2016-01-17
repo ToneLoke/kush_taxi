@@ -1,118 +1,93 @@
-<div class="row">
-
-
-  <div class="col s6">
-    <ul class="grey darken-4 row">
-
-
-      <div class="search-wrapper">
-        <i class="material-icons prefix lime-text text-accent-2 col s2">search</i>
-        <input id="search" type="search" class="col s8 offset-s2"/>
+<div class="row center">
+  <!-- SEARCH AND FILTERS -->
+  <div class="col s6 m12 valign-wrapper ">
+    <div class="row">
+      <div class="input-field col s12 m4 offset-m3">
+        <input id="search" type="search">
+        <label for="search"><i class="material-icons">search</i></label>
       </div>
-
-      <div class="row">
-        <p>
-          <input name="group1" type="radio" id="test1" />
-          <label class="lime-text text-accent-2" for="test1">Name</label>
-        </p>
-        <p>
-          <input name="group1" type="radio" id="test2" />
-          <label class="lime-text text-accent-2" for="test2">Price</label>
-        </p>
-        <p>
-          <input name="group1" type="radio" id="test3" />
-          <label class="lime-text text-accent-2" for="test3">Type</label>
-        </p>
-
-      </div>
-    </ul>
-
+      <p class="col s12 m2 offset-m1 valign">
+        <input name="group1" type="radio" id="name" />
+        <label class="lime-text text-accent-2 " for="name">Name</label>
+      </p>
+      <p class="col s12 m2 valign">
+        <input name="group1" type="radio" id="price" />
+        <label class="lime-text text-accent-2 " for="price">Price</label>
+      </p>
+      <p class="col s12 m2 valign">
+        <input name="group1" type="radio" id="type" />
+        <label class="lime-text text-accent-2" for="type">Type</label>
+      </p>
+    </div>
   </div>
   <!--Select Categories -->
-
-  <div class="col s6 grey darken-4">
-    <ul class="grey darken-4 row">
-      <li class="tab col s12 m3 ">
-        <a ui-sref="javascript">
-          <div class="chip grey darken-4 lime-text text-accent-2">
-            <img src="/images/Flowers.jpg" class="responsive-img" alt="Flowers">
-            Flowers
-          </div>
-        </a>
+  <div class="col s6 m12 grey darken-4 ">
+    <ul class=" grey darken-4">
+      <li class="col s12 m3 grey darken-4 ">
+        <div class="chip grey darken-4 lime-text text-accent-2">
+          <img src="/images/Flowers.jpg" alt="Flowers" /> Flowers
+        </div>
       </li>
-      <li class="tab col s12 m3 ">
-        <a ui-sref="angularjs">
-          <div class="chip grey darken-4 lime-text text-accent-2">
-            <img src="/images/edibles.jpg" class="responsive-img" alt="Edibles">
-            Edibles
-          </div>
-        </a>
+      <li class="col s12 m3 grey darken-4 ">
+        <div class="chip grey darken-4 lime-text text-accent-2">
+          <img src="/images/edibles.jpg" class="responsive-img" alt="Edibles"> Edibles
+        </div>
       </li>
-      <li class="tab col s12 m3 ">
-        <a ui-sref="angularjs">
-          <div class="chip grey darken-4 lime-text text-accent-2">
-            <img src="/images/Concentrates.jpg" class="responsive-img" alt="Concentrates">
-            Hash
-          </div>
-        </a>
+      <li class="col s12 m3 grey darken-4 ">
+        <div class="chip grey darken-4 lime-text text-accent-2">
+          <img src="/images/Concentrates.jpg" class="responsive-img" alt="Concentrates"> Hash
+        </div>
       </li>
-      <li class="tab col s12 m3 ">
-        <a ui-sref="jquery">
-          <div class="chip grey darken-4 lime-text text-accent-2">
-            <img src="/images/clones.jpeg" class="responsive-img" alt="Clones">
-            Clones
-          </div>
-        </a>
+      <li class="col s12 m3 grey darken-4 ">
+        <div class="chip grey darken-4 lime-text text-accent-2">
+          <img src="/images/clones.jpeg" class="responsive-img" alt="Clones"> Clones
+        </div>
       </li>
-      <!--<li class="tab col s3"><a href="#test4">Test 4</a></li>-->
     </ul>
   </div>
 </div>
-<!-- Template for Products -->
-<div class="col s12 m3 grey darken-4 z-depth-2" ng-repeat="strain in pr.strains">
-  <div class="card small hoverable grey darken-4">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator scalable" ng-src="https://d3h17ltqi8v019.cloudfront.net/hybrid/{{ strain.UrlName }}/primary?width=1024" class="center responsive-img"/>
-    </div>
-    <div class="card-content">
-      <span class="card-title activator grey darken-4">{{strain.Name}}<a class="btn-floating btn-med waves-effect waves-light lime accent-2 right"><i class="material-icons black-text">shopping_cart</i></a></span>
-      <img class="" ng-src="{{strain.StarImage}}" /><span>{{strain.Rating}}</span>
-      <p><a href="#">Learn more about this strain</a></p>
-    </div>
-    <div class="card-reveal grey darken-4">
-      <span class="card-title">{{strain.Name}} Prices<i class="material-icons right">close</i></span>
-      <!-- Dropdown Trigger -->
-      <a class="dropdown-button btn" href='javascript:void(0);' data-activates="dropdown1" data-beloworigin="true">Choose an option</a>
-      <!-- Dropdown Structure -->
-      <ul id="dropdown1" class="dropdown-content">
-        <li><a href='javascript:void(0);'>1g</a></li>
-        <li><a href='javascript:void(0);'>1/8oz (3.5g)</a></li>
-        <li><a href='javascript:void(0);'>1/4oz (7g)</a></li>
-        <li><a href='javascript:void(0);'>1/2oz (14g)</a></li>
-        <li><a href='javascript:void(0);'>1oz (28g)</a></li>
-      </ul>
+<div class="row">
+  <!-- Template for Products -->
+  <div class="col s12 m6 l4 grey darken-4" ng-repeat="strain in pr.strains">
+    <div class="card small hoverable grey darken-4">
+      <div class="card-image activator responsive-img ">
+        <img class="" ng-src="https://d3h17ltqi8v019.cloudfront.net/hybrid/{{ strain.UrlName }}/primary?width=1024" />
+      </div>
+      <div class="card-content">
+        <p class="card-title activator grey darken-4 truncate">{{strain.Name}}</p>
+        <img class="responsive-img left" ng-src="{{strain.StarImage}}" />
+        <p class="left">{{strain.Rating}}</p>
+        <a class="btn-floating btn-med waves-effect waves-light lime accent-2 right"><i class="material-icons activator black-text">shopping_cart</i></a>
+      </div>
+      <div class="card-reveal grey darken-4 valign-wrapper">
+        <span class="card-title">{{strain.Name}} Prices:<i class="material-icons right">close</i></span>
+
+        <ul id="prices" class="row">
+          <li ><span class="col s5 offset-s2">GRAMS</span><span class="col s5">PRICE</span></li>
+          <li ><span class="col s5 offset-s2">1g: </span><span class="col s4">{{strain.pricing.gram}}</span><a class="btn-floating waves-effect waves-light red right"><i class="material-icons">add</i></a></li>
+          <li ><span class="col s5 offset-s2">1/8(3.5g): </span><span class="col s4">{{strain.pricing.eighth}}</span><a class="btn-floating waves-effect waves-light red right"><i class="material-icons">add</i></a></li>
+          <li ><span class="col s5 offset-s2">1/4(7g):</span><span class="col s4">{{strain.pricing.quad}}</span><a class="btn-floating waves-effect waves-light red right"><i class="material-icons">add</i></a></li>
+          <li ><span class="col s5 offset-s2">1/2(14g):</span><span class="col s4">{{strain.pricing.half}}</span><a class="btn-floating waves-effect waves-light red right"><i class="material-icons">add</i></a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
+
 <script type="text/javascript">
-$(document).ready(function() {
-  console.log("working");
-  $("li.tab a").click(function(){
-    //console.log(this)
-    $("li.tab a").removeClass("active")
-    $(this).addClass("active")
-    // $('#search').val('')
-  });
-  $(".dropdown-button").dropdown({
-    inDuration: 300,
-    outDuration: 225,
-    constrain_width: true, // Does not change width of dropdown to that of the activator
-    hover: true, // Activate on hover
-    gutter: 0, // Spacing from edge
-    belowOrigin: false, // Displays dropdown below the button
-    alignment: "left" // Displays dropdown with edge aligned to the left of button
-  }
-);
-})
+  $(document).ready(function() {
+    $(document).on("click", "a.dropdown-button", function(e) {
+      $(".dropdown-button").dropdown({
+        inDuration: 300,
+        outDuration: 225,
+        constrain_width: true, // Does not change width of dropdown to that of the activator
+        hover: true, // Activate on hover
+        gutter: 0, // Spacing from edge
+        belowOrigin: false, // Displays dropdown below the button
+        alignment: "left" // Displays dropdown with edge aligned to the left of button
+      });
+    });
+
+  })
 </script>
 <!-- End Template for Products -->
