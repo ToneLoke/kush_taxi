@@ -31,6 +31,16 @@ module.exports = {
           res.json({message: 'Order Created!', success: true})
         })
       }
+    }, // End of create method
+    update: function (req, res) {
+      console.log('======Updating a new product request+++++++', req.body)
+      if (req.body) {
+        var product = new db.Item(req.body)
+        product.save(function (err) {
+          if (err) res.json({message: err.message, success: false})
+          res.json({message: 'Order Created!', success: true})
+        })
+      }
     } // End of create method
   }, // End of Product Controller Object
   // ==========================================
@@ -46,7 +56,7 @@ module.exports = {
       })
     }, // End of all method
     create: function (req, res) {
-      console.log('=====Creating new order request+++++++')
+      console.log('=======Creating new order request+++++++')
       var order = db.Order.new(req.body.order)
       order.save(function (err) {
         if (err) res.json({
